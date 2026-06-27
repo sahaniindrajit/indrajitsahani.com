@@ -60,7 +60,6 @@ const projectsData = [
 		sourceCode: "https://github.com/sahaniindrajit/Pdf-talk",
 		category: "AI / Full Stack",
 		workType: "Personal",
-		notable: true,
 	},
 	{
 		project: "Rezumi",
@@ -70,7 +69,6 @@ const projectsData = [
 		sourceCode: "https://github.com/sahaniindrajit/Rezumi",
 		category: "AI / Full Stack",
 		workType: "Personal",
-		notable: true,
 	},
 	{
 		project: "NotionLeager",
@@ -80,6 +78,7 @@ const projectsData = [
 		sourceCode: "https://github.com/sahaniindrajit/NotionLeager",
 		category: "Backend",
 		workType: "Personal",
+		notable: true,
 	},
 	{
 		project: "ManageFiasco",
@@ -100,6 +99,7 @@ const projectsData = [
 			"https://github.com/sahaniindrajit/Spotify-playlist-to-YouTube-Backend",
 		category: "Backend",
 		workType: "Personal",
+		notable: true,
 	},
 	{
 		project: "Toupe",

@@ -49,8 +49,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
 					</Link>
 				</h3>
 				{notable && (
-					<span className="not-prose inline-flex items-center gap-1 ml-3 px-2 py-0.5 text-xs font-medium rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
-						<span aria-hidden="true">★</span> Top Project
+					<span className="not-prose inline-flex items-center gap-1.5 ml-3 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full text-amber-950 dark:text-amber-100 bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-300 dark:from-amber-500/25 dark:via-yellow-500/20 dark:to-amber-400/25 ring-1 ring-inset ring-amber-400/60 dark:ring-amber-300/40 shadow-sm shadow-amber-500/30">
+						<span aria-hidden="true" className="text-amber-600 dark:text-amber-300">★</span>
+						Top Project
 					</span>
 				)}
 			</div>
