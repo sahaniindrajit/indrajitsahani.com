@@ -3,10 +3,10 @@ const ContentSecurityPolicy = `
     script-src 'self' 'unsafe-eval' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com cdn.vercel-insights.com vercel.live va.vercel-scripts.com;
     style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
-    media-src 'self' https://cdn.ayushchugh.com;
+    media-src 'self';
     connect-src * www.google-analytics.com;
     font-src 'self' data:;
-    frame-src 'self' platform.twitter.com;
+    frame-src 'self' blob:;
 `;
 
 const securityHeaders = [
@@ -20,7 +20,7 @@ const securityHeaders = [
 	},
 	{
 		key: "X-Frame-Options",
-		value: "DENY",
+		value: "SAMEORIGIN",
 	},
 	{
 		key: "X-Content-Type-Options",
@@ -45,9 +45,9 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "cdn.ayushchugh.com",
+				hostname: "www.google.com",
 				port: "",
-				pathname: "/**",
+				pathname: "/s2/favicons**",
 			},
 		],
 	},

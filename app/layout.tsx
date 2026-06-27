@@ -10,34 +10,21 @@ import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ayushchugh.com"),
+	metadataBase: new URL("https://indrajitsahani.com"),
 	title: {
-		default: "Ayush Chugh - Full Stack Developer from India",
-		template: "%s | Ayush Chugh",
+		default: "Indrajit Sahani - Full-Stack Developer",
+		template: "%s | Indrajit Sahani",
 	},
 	description:
-		"Ayush Chugh is a Full Stack Developer from India specializing in React, Next.js, TypeScript & Node.js. Explore projects, blog posts, and professional experience.",
-	alternates: {
-		types: {
-			"application/rss+xml": "https://ayushchugh.com/rss",
-		},
-	},
+		"Indrajit Sahani is a product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
 	openGraph: {
-		title: "Ayush Chugh - Full Stack Developer from India",
+		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
-			"Full Stack Developer from India specializing in React, Next.js, TypeScript & Node.js. Explore projects, blog posts, and professional experience.",
-		url: "https://ayushchugh.com",
-		siteName: "Ayush Chugh's Portfolio",
+			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+		url: "https://indrajitsahani.com",
+		siteName: "Indrajit Sahani's Portfolio",
 		locale: "en_US",
 		type: "website",
-		images: [
-			{
-				url: "/ogs/ogs-bg.png",
-				width: 1200,
-				height: 630,
-				alt: "Ayush Chugh - Full Stack Developer Portfolio",
-			},
-		],
 	},
 	robots: {
 		index: true,
@@ -51,73 +38,12 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Ayush Chugh - Full Stack Developer from India",
+		title: "Indrajit Sahani - Full-Stack Developer",
 		card: "summary_large_image",
-		creator: "@aayushchugh",
-		site: "@aayushchugh",
+		creator: "@sahani_indrajit",
+		site: "@sahani_indrajit",
 		description:
-			"Full Stack Developer from India specializing in React, Next.js, TypeScript & Node.js. Explore projects, blog posts, and professional experience.",
-		images: ["/ogs/ogs-bg.png"],
-	},
-	icons: {
-		icon: [
-			{
-				media: "(prefers-color-scheme: light)",
-				url: "/favicon/favicon-96x96.png",
-				href: "/favicon/favicon-96x96.png",
-				sizes: "96x96",
-				type: "image/png",
-				rel: "icon",
-			},
-			{
-				media: "(prefers-color-scheme: light)",
-				url: "/favicon/favicon.svg",
-				type: "image/svg+xml",
-				rel: "icon",
-			},
-			{
-				media: "(prefers-color-scheme: dark)",
-				url: "/favicon/favicon-dark-96x96.png",
-				href: "/favicon/favicon-dark-96x96.png",
-				sizes: "96x96",
-				type: "image/png",
-				rel: "icon",
-			},
-			{
-				media: "(prefers-color-scheme: dark)",
-				url: "/favicon/favicon-dark.svg",
-				type: "image/svg+xml",
-				rel: "icon",
-			},
-		],
-		shortcut: [
-			{
-				media: "(prefers-color-scheme: light)",
-				url: "/favicon/favicon.ico",
-				href: "/favicon/favicon.ico",
-			},
-			{
-				media: "(prefers-color-scheme: dark)",
-				url: "/favicon/favicon-dark.ico",
-				href: "/favicon/favicon-dark.ico",
-			},
-		],
-		apple: [
-			{
-				media: "(prefers-color-scheme: light)",
-				url: "/favicon/apple-touch-icon.png",
-				href: "/favicon/apple-touch-icon.png",
-				sizes: "180x180",
-				type: "image/png",
-			},
-			{
-				media: "(prefers-color-scheme: dark)",
-				url: "/favicon/apple-touch-icon-dark.png",
-				href: "/favicon/apple-touch-icon-dark.png",
-				sizes: "180x180",
-				type: "image/png",
-			},
-		],
+			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
 	},
 };
 
@@ -144,14 +70,14 @@ export default function RootLayout({
 						__html: JSON.stringify({
 							"@context": "https://schema.org",
 							"@type": "WebSite",
-							name: "Ayush Chugh",
-							url: "https://ayushchugh.com",
+							name: "Indrajit Sahani",
+							url: "https://indrajitsahani.com",
 							description:
-								"Full Stack Developer from India specializing in React, Next.js, TypeScript & Node.js.",
+								"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go.",
 							author: {
 								"@type": "Person",
-								name: "Ayush Chugh",
-								url: "https://ayushchugh.com",
+								name: "Indrajit Sahani",
+								url: "https://indrajitsahani.com",
 							},
 						}),
 					}}

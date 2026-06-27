@@ -3,12 +3,12 @@ import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import ProjectCard from "../components/project-card";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ayushchugh.com"),
+	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Projects",
 	description:
-		"Explore projects by Ayush Chugh: Worldtravels (2k+ daily users), Invoicen, Shriproperty, and more. Full stack web apps built with React, Next.js & Node.js.",
+		"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
 	keywords: [
-		"Ayush Chugh Projects",
+		"Indrajit Sahani Projects",
 		"Web Development Projects",
 		"React Projects",
 		"Next.js Projects",
@@ -22,154 +22,107 @@ export const metadata: Metadata = {
 		canonical: "/projects",
 	},
 	openGraph: {
-		title: "Projects - Full Stack Web Applications | Ayush Chugh",
+		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
-			"Explore projects by Ayush Chugh: Worldtravels (2k+ daily users), Invoicen, Shriproperty, and more. Full stack web apps built with React, Next.js & Node.js.",
-		url: "https://ayushchugh.com/projects",
-		siteName: "Ayush Chugh's Portfolio",
-		images: [
-			{
-				url: "https://cdn.ayushchugh.com/open-graph/business-card.png",
-				width: 1200,
-				height: 630,
-				alt: "Ayush Chugh's Full Stack Projects Portfolio",
-			},
-		],
+			"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
+		url: "https://indrajitsahani.com/projects",
+		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Projects - Full Stack Web Applications | Ayush Chugh",
+		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
-			"Explore projects by Ayush Chugh: Worldtravels (2k+ daily users), Invoicen, Shriproperty, and more. Full stack web apps built with React, Next.js & Node.js.",
-		images: ["https://cdn.ayushchugh.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		site: "@aayushchugh",
+			"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
+		creator: "@sahani_indrajit",
+		site: "@sahani_indrajit",
 	},
 };
 
 const projectsData = [
 	{
-		project: "Worldtravels (2k+ active users daily)",
-		logo: "https://cdn.ayushchugh.com/logos/worldtravels.png",
+		project: "SketchSync",
 		description:
-			"A B2B flight booking platform for travel agencies to manage bookings and payments. I have built the end to end frontend for the platform.",
-		technologies: ["React", "Redux", "TypeScript", "NextJS"],
-		website: "https://www.worldtravelsonline.in/en",
-		category: "Frontend",
-		workType: "Freelance",
+			"A real-time collaborative whiteboard. A multiplayer canvas for sketching and brainstorming, with low-latency live sync so teams can draw together in real time. Built to stay smooth under concurrent editing.",
+		technologies: ["React", "React-Konva", "WebSocket", "Node.js", "Express"],
+		website: "https://sketchsync.onrender.com/",
+		sourceCode: "https://github.com/sahaniindrajit/sketchsync",
+		category: "Full Stack",
+		workType: "Personal",
+		notable: true,
 	},
 	{
-		project: "Repo Command",
-		logo: "https://cdn.ayushchugh.com/logos/repository-commander.svg",
+		project: "PDF-Talk",
 		description:
-			"A Github app that lets you automate tasks by adding labels and using `/` commands in comments to approve or merge pull requests.",
-		technologies: ["Node.js", "TypeScript", "Probot"],
-		website: "https://github.com/marketplace/repo-command",
+			"Ask questions to any PDF. Upload a document and ask it questions in plain language. It uses embeddings and semantic search (RAG) to return accurate, context-aware answers, built for document-heavy workflows.",
+		technologies: ["Next.js", "Langchain", "Pinecone", "Hugging Face", "MongoDB"],
+		website: "https://pdf-talk-opal.vercel.app/",
+		sourceCode: "https://github.com/sahaniindrajit/Pdf-talk",
+		category: "AI / Full Stack",
+		workType: "Personal",
+	},
+	{
+		project: "Rezumi",
+		description:
+			"An AI resume builder that generates job-tailored, ATS-friendly resumes by reading a job description and structuring the most relevant skills and experience. Powered by Google Gemini.",
+		technologies: ["TypeScript", "Next.js", "Google Gemini"],
+		sourceCode: "https://github.com/sahaniindrajit/Rezumi",
+		category: "AI / Full Stack",
+		workType: "Personal",
+	},
+	{
+		project: "NotionLeager",
+		description:
+			"A Telegram bot for expense tracking that uses Notion as the database backend. Written in Go, a deliberate step outside the JS ecosystem.",
+		technologies: ["Go", "Telegram Bot API", "Notion API"],
+		sourceCode: "https://github.com/sahaniindrajit/NotionLeager",
 		category: "Backend",
 		workType: "Personal",
+		notable: true,
 	},
 	{
-		project: "EJS Snippets And Color Highlighting for VsCode (7k+ downloads)",
-		logo: "https://cdn.ayushchugh.com/logos/ejs-language-snippets-and-color-highlighting-vscode.png",
-		description: "Add snippets and syntax highlighting for EJS",
-		technologies: ["Javascript", "vsce"],
-		website:
-			"https://marketplace.visualstudio.com/items/?itemName=AyushChugh.ejs-snippets-and-color-highlighting",
-		category: "Tools",
-		workType: "Personal",
-	},
-	{
-		project: "Invoicen",
-		logo: "https://cdn.ayushchugh.com/logos/invoicen-icon.png",
+		project: "ManageFiasco",
 		description:
-			"A Simple Invoice Generator for Freelancers and Businesses and enterprises.",
-		technologies: ["NextJS", "shadcn", "TypeScript", "Tailwind"],
-		website: "https://invoicen.ayushchugh.com",
+			"A task-management dashboard with a Kanban board, list views, authentication, and drag-and-drop prioritization.",
+		technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+		website: "https://managefiasco.vercel.app/",
+		sourceCode: "https://github.com/sahaniindrajit/Task-Manager",
 		category: "Full Stack",
 		workType: "Personal",
 	},
 	{
-		project: "Shriproperty",
-		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
+		project: "Spotify to YouTube",
 		description:
-			"A real estate platform that simplifies the process of finding and listing properties.",
-		technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-		website: "https://www.shriproperty.com",
-		category: "Full Stack",
-		workType: "Freelance",
-	},
-	{
-		project: "A2INFINITE",
-		logo: "https://cdn.ayushchugh.com/logos/a2infinite.png",
-		description:
-			"A platform for downloadable practice worksheets for students.",
-		technologies: ["HTML", "CSS", "JavaScript"],
-		website: "https://a2infinite.com",
-		category: "Frontend",
-		workType: "Freelance",
-	},
-
-	// {
-	// 	project: "Soumya Sourav's Portfolio",
-	// 	description:
-	// 		"Personal portfolio website for Soumya Sourav, a Asst. Vice President",
-	// 	technologies: ["NextJS", "TypeScript", "Firebase"],
-	// 	website: "https://soumyasourav.com",
-	// },
-
-	{
-		project: "FlipTimer",
-		description:
-			"A countdown timer that lets users set a target date and displays time left in months, weeks, days, hours, minutes, and seconds.",
-		technologies: ["NextJS", "TypeScript", "shadcn", "framer-motion"],
-		website: "https://fliptimer.ayushchugh.com",
-		category: "Frontend",
+			"Converts Spotify playlists into YouTube playlists in a few clicks, using the Spotify and YouTube Data APIs.",
+		technologies: ["Node.js", "Spotify API", "YouTube Data API"],
+		sourceCode:
+			"https://github.com/sahaniindrajit/Spotify-playlist-to-YouTube-Backend",
+		category: "Backend",
 		workType: "Personal",
+		notable: true,
 	},
 	{
-		project: "Sky At Night",
-		logo: "https://cdn.ayushchugh.com/logos/sky-at-night.png",
-		description: "A dark theme for vscode",
-		technologies: ["JavaScript", "vsce"],
-		website:
-			"https://marketplace.visualstudio.com/items?itemName=AyushChugh.sky-at-night",
-		category: "Tools",
+		project: "Toupe",
+		description: "A payment app with backend integration and deployment.",
+		technologies: ["Node.js", "TypeScript", "Payments"],
+		website: "https://toupe-payment-app.onrender.com/",
+		category: "Full Stack",
 		workType: "Personal",
 	},
 ];
-
-// const openSourceData = [
-// {
-// 	project: "Maya",
-// 	logo: "https://cdn.ayushchugh.com/logos/maya.png",
-// 	description:
-// 		"Maya is a project that helps users manage their pocket money, track expenses, and set savings goals.",
-// 	technologies: ["React", "Node.js", "Express", "TypeScript"],
-// 	website: "https://github.com/maya-manager",
-// },
-// {
-// 	project: "Multi Email",
-// 	logo: "https://cdn.ayushchugh.com/logos/multiEmail.png",
-// 	description:
-// 		"Multi Email is a platform that allows users to connect and manage multiple email services in one place.",
-// 	technologies: ["React", "Node.js", "Express", "OAuth", "TypeScript"],
-// 	website: "https://github.com/MultiEmail/",
-// },
-// ];
 
 export default function ProjectsPage() {
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		name: "Ayush Chugh's Projects",
+		name: "Indrajit Sahani's Projects",
 		description:
-			"Portfolio of projects built by Ayush Chugh, including web applications and open-source contributions.",
-		url: "https://ayushchugh.com/projects",
+			"Portfolio of projects built by Indrajit Sahani, including web applications, AI tools, and open-source contributions.",
+		url: "https://indrajitsahani.com/projects",
 		author: {
 			"@type": "Person",
-			name: "Ayush Chugh",
-			url: "https://ayushchugh.com",
+			name: "Indrajit Sahani",
+			url: "https://indrajitsahani.com",
 		},
 		mainEntity: {
 			"@type": "ItemList",
@@ -181,15 +134,15 @@ export default function ProjectsPage() {
 					name: project.project,
 					description: project.description,
 					applicationCategory: "WebApplication",
-					url: project.website,
+					url: project.website || project.sourceCode,
 				},
 			})),
 		},
 	};
 
 	const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-		{ name: "Home", url: "https://ayushchugh.com" },
-		{ name: "Projects", url: "https://ayushchugh.com/projects" },
+		{ name: "Home", url: "https://indrajitsahani.com" },
+		{ name: "Projects", url: "https://indrajitsahani.com/projects" },
 	]);
 
 	return (
@@ -206,7 +159,7 @@ export default function ProjectsPage() {
 			/>
 			<h1 className="font-medium text-2xl mb-4 tracking-tight">Projects 🚀</h1>
 			<p className="sr-only">
-				A showcase of web development projects built by Ayush Chugh, including full stack applications, frontend projects, backend services, and developer tools. Projects are built using technologies like React, Next.js, TypeScript, Node.js, PostgreSQL, and MongoDB. Includes both freelance client work and personal open-source projects.
+				A showcase of projects built by Indrajit Sahani, including full-stack applications, AI tools, and developer utilities. Built with technologies like React, Next.js, TypeScript, Node.js, Go, WebSocket, Langchain, and more. Each project solves a real problem and ships.
 			</p>
 
 			{/* Projects Section */}
@@ -215,34 +168,16 @@ export default function ProjectsPage() {
 					<ProjectCard
 						key={index}
 						title={project.project}
-						logo={project.logo}
 						description={project.description}
 						technologies={project.technologies}
 						website={project.website}
+						sourceCode={project.sourceCode}
 						category={project.category}
 						workType={project.workType}
+						notable={project.notable}
 					/>
 				))}
 			</div>
-
-			{/* Open Source Contributions Section */}
-			{/* <h2 className="font-medium text-2xl mb-4">Open Source Contributions</h2>
-      <p className="prose prose-neutral dark:prose-invert">
-        These are various open-source projects maintained by me, as well as
-        those to which I have contributed throughout my programming journey.
-      </p>
-      <div className="prose prose-neutral dark:prose-invert mt-4">
-        {openSourceData.map((contribution, index) => (
-          <ProjectCard
-            key={index}
-            title={contribution.project}
-            logo={contribution.logo}
-            description={contribution.description}
-            technologies={contribution.technologies}
-            website={contribution.website}
-          />
-        ))}
-      </div> */}
 		</section>
 	);
 }

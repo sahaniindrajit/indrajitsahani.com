@@ -1,58 +1,46 @@
-// pages/ContactPage.tsx
-
 import type { Metadata } from "next";
 import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
-import Image from "next/image";
 import Separator from "../components/separator";
-import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, XLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { config } from "../config/config";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ayushchugh.com"),
+	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Contact",
 	description:
-		"Get in touch with Ayush Chugh for freelance projects, collaborations, or job opportunities. Reach out via email or schedule a 1:1 meeting.",
+		"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
 	keywords: [
-		"Contact Ayush Chugh",
+		"Contact Indrajit Sahani",
 		"Hire Full Stack Developer",
-		"Freelance Developer India",
-		"Schedule Meeting Developer",
+		"Freelance Developer",
+		"Remote Developer",
 		"Web Developer for Hire",
 	],
 	alternates: {
 		canonical: "/contact",
 	},
 	openGraph: {
-		title: "Contact Ayush Chugh - Hire a Full Stack Developer",
+		title: "Contact Indrajit Sahani - Hire a Full-Stack Developer",
 		description:
-			"Get in touch with Ayush Chugh for freelance projects, collaborations, or job opportunities. Reach out via email or schedule a 1:1 meeting.",
-		url: "https://ayushchugh.com/contact",
-		siteName: "Ayush Chugh's Portfolio",
-		images: [
-			{
-				url: "https://cdn.ayushchugh.com/open-graph/business-card.png",
-				width: 1200,
-				height: 630,
-				alt: "Contact Ayush Chugh - Full Stack Developer",
-			},
-		],
+			"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
+		url: "https://indrajitsahani.com/contact",
+		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Contact Ayush Chugh - Hire a Full Stack Developer",
+		title: "Contact Indrajit Sahani - Hire a Full-Stack Developer",
 		description:
-			"Get in touch with Ayush Chugh for freelance projects, collaborations, or job opportunities. Reach out via email or schedule a 1:1 meeting.",
-		images: ["https://cdn.ayushchugh.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		site: "@aayushchugh",
+			"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
+		creator: "@sahani_indrajit",
+		site: "@sahani_indrajit",
 	},
 };
 
 export default function ContactPage() {
 	const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-		{ name: "Home", url: "https://ayushchugh.com" },
-		{ name: "Contact", url: "https://ayushchugh.com/contact" },
+		{ name: "Home", url: "https://indrajitsahani.com" },
+		{ name: "Contact", url: "https://indrajitsahani.com/contact" },
 	]);
 
 	return (
@@ -64,42 +52,46 @@ export default function ContactPage() {
 				}}
 			/>
 			<h1 className='font-medium text-2xl mb-6 tracking-tight font-["monospace"]'>
-				Contact 📧
+				Let's build something 📧
 			</h1>
 			<p className="sr-only">
-				Contact Ayush Chugh, Full Stack Developer available for freelance web development projects, consulting, and collaboration. Based in Mohali, India. Specializing in React, Next.js, TypeScript, and Node.js development. Reach out via email or book a one-on-one meeting through Topmate.
+				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to remote roles, freelance work, and collaborations, especially with early-stage teams shipping fast. Reach out via email or a direct message on X.
 			</p>
 
-			{/* Email Contact */}
 			<div className="prose prose-neutral dark:prose-invert">
-				<p>Feel free to reach out to me via email:</p>
-				<div className="flex items-center mb-4">
-					<EnvelopeSimple size={24} />
-					<a
-						href={`mailto:${config.socials.email}`}
-						className="underline text-sm ml-1"
-					>
-						{config.socials.email}
-					</a>
-				</div>
+				<p>
+					I'm open to remote roles, freelance work, and collaborations, especially
+					with early-stage teams shipping fast. The fastest way to reach me is a
+					DM on X or an email. I'll get back to you.
+				</p>
 
 				<Separator />
 
-				{/* Meeting Schedule Option */}
-				<h2 className="font-medium text-2xl mb-6 tracking-tight font-['monospace']">
-					Want to chat? Schedule a 1:1 with me!
-				</h2>
-				<p className="mb-6">
-					Book a time that works for you directly through Topmate:
-				</p>
-				<div className="not-prose mb-8">
+				<div className="not-prose space-y-3 mt-6">
 					<a
-						href={config.socials.topmate}
+						href={`mailto:${config.socials.email}`}
+						className="flex items-center gap-2 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors"
+					>
+						<EnvelopeSimple size={22} />
+						<span className="text-sm">{config.socials.email}</span>
+					</a>
+					<a
+						href={config.socials.twitter}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg font-medium hover:bg-neutral-700 dark:hover:bg-neutral-300 transition-colors"
+						className="flex items-center gap-2 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors"
 					>
-						Schedule a meeting →
+						<XLogo size={22} />
+						<span className="text-sm">DM me on X (@sahani_indrajit)</span>
+					</a>
+					<a
+						href={config.socials.linkedin}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-2 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors"
+					>
+						<LinkedinLogo size={22} />
+						<span className="text-sm">Connect on LinkedIn</span>
 					</a>
 				</div>
 			</div>

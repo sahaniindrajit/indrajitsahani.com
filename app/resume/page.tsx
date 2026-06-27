@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import WorkExperienceItem from "../components/work-experience-item";
 import EducationItem from "../components/education-item";
-import VolunteeringItem from "../components/volunteer-item";
+import Chip from "../components/chip";
 import { config } from "../config/config";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ayushchugh.com"),
+	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Resume",
 	description:
-		"Ayush Chugh's resume: Team Lead at Avenue Ticketing. Full Stack Developer experienced in React, Next.js, TypeScript & Node.js.",
+		"Indrajit Sahani's resume: Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
 	keywords: [
-		"Ayush Chugh Resume",
+		"Indrajit Sahani Resume",
 		"Full Stack Developer Resume",
 		"Web Developer CV",
 		"React Developer Resume",
 		"Software Engineer Resume",
 		"Work Experience",
-		"Hire Developer India",
+		"Hire Developer",
 		"TypeScript Developer Resume",
 	],
 	alternates: {
@@ -25,230 +25,93 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		type: "article",
-		url: "https://ayushchugh.com/resume",
-		title: "Resume - Full Stack Developer Experience | Ayush Chugh",
-		siteName: "Ayush Chugh's Portfolio",
+		url: "https://indrajitsahani.com/resume",
+		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
+		siteName: "Indrajit Sahani's Portfolio",
 		description:
-			"Team Lead at Avenue Ticketing. Full Stack Developer experienced in React, Next.js, TypeScript & Node.js.",
-		images: [
-			{
-				url: "https://cdn.ayushchugh.com/open-graph/business-card.png",
-				width: 1200,
-				height: 630,
-				alt: "Ayush Chugh's Full Stack Developer Resume",
-			},
-		],
+			"Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Resume - Full Stack Developer Experience | Ayush Chugh",
+		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
 		description:
-			"Team Lead at Avenue Ticketing. Full Stack Developer experienced in React, Next.js, TypeScript & Node.js.",
-		images: ["https://cdn.ayushchugh.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		site: "@aayushchugh",
+			"Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
+		creator: "@sahani_indrajit",
+		site: "@sahani_indrajit",
 	},
 };
+
+const toolkit = [
+	{
+		area: "Frontend",
+		tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN", "Recoil", "React-Konva"],
+	},
+	{
+		area: "Backend",
+		tools: ["Node.js", "Hono", "Express", "REST APIs", "WebSocket", "Go"],
+	},
+	{
+		area: "Data & Infra",
+		tools: ["MongoDB", "PostgreSQL", "Prisma", "Redis", "Docker", "Hetzner", "Dokploy", "Vercel"],
+	},
+	{
+		area: "AI / ML",
+		tools: ["Langchain", "Pinecone", "Hugging Face", "RAG pipelines"],
+	},
+];
 
 const resumeData = {
 	workExperience: [
 		{
-			company: "Avenue Ticketing, Inc.",
-			logo: "https://cdn.ayushchugh.com/logos/avenue.jpeg",
+			company: "Enrich Labs (Sendkit)",
+			logo: "https://www.google.com/s2/favicons?domain=sendkit.ai&sz=128",
 			location: "Remote",
-			website: config.companies.avenueTicketing,
-			positions: [
-				{
-					role: "Team Lead",
-					period: "Aug 2025 - Present",
-					workType: "Full-time",
-					technologies: [
-						"NodeJS",
-						"TypeScript",
-						"PostgreSQL",
-						// "Redis",
-						"AWS",
-						"Stripe",
-						"Docker",
-						"Railway",
-					],
-					responsibilities: [
-						"Developing complex end-to-end features including payment processing, event management, and user authentication systems",
-						"Building advanced TypeScript modules with complex business logic for ticket validation, pricing calculations",
-						"Implementing sophisticated error handling and data validation patterns across the entire application stack",
-						"Creating reusable components and utilities that handle complex state management and API integrations",
-						"Identifying and fixing edge cases in the codebase",
-						"Implementing monitoring and logging solutions for the application",
-					],
-				},
-				{
-					role: "Full Stack Developer",
-					period: "Apr 2025 - Aug 2025",
-					workType: "Part-time",
-					technologies: [
-						"NodeJS",
-						"TypeScript",
-						"PostgreSQL",
-						// "Redis",
-						"AWS",
-						"Stripe",
-					],
-					responsibilities: [
-						"Developing and maintaining a ticketing platform for event organizers and attendees.",
-						"Implementing secure authentication and authorization systems for organizers and users.",
-						"Optimizing server performance and implementing monitoring solutions for high-traffic events.",
-						"Re-writing legacy code to improve code quality and maintainability.",
-						"Creating and maintaining documentation for the codebase and processes.",
-					],
-				},
-			],
-		},
-		{
-			company: "Ravix Studio",
-			logo: "https://cdn.ayushchugh.com/logos/ravix-dark.png",
-			location: "On-site",
-			website: config.companies.ravixStudio,
-			positions: [
-				{
-					role: "Co-founder & CTO",
-					period: "Nov 2025 - March 2026",
-					workType: "Full-time",
-					technologies: [
-						"NextJS",
-						"TypeScript",
-						"NodeJS",
-						"PostgreSQL",
-						"AWS",
-						"Docker",
-						"Railway",
-					],
-					responsibilities: ["Building alot of cool stuff"],
-				},
-			],
-		},
-		{
-			company: "Vibranium Soft",
-			logo: "https://cdn.ayushchugh.com/logos/vibraniumsoft.jpeg",
-			location: "Remote",
-			website: config.companies.vibraniumSoft,
-			positions: [
-				{
-					role: "Frontend Developer",
-					period: "December 2023 - July 2025",
-					workType: "Freelance",
-					technologies: [
-						"NextJS",
-						"Redux",
-						"TypeScript",
-						"Tailwind CSS",
-						"MUI",
-					],
-					responsibilities: [
-						"Developing and maintaining a B2B flight booking platform.",
-						"Collaborating with cross-functional teams to deliver optimized solutions for the travel industry.",
-						"Implementing features for flight search, booking management, and user onboarding.",
-						"Building a user-friendly interface to enhance customer experience.",
-						"Created responsive layouts for different screen sizes and devices.",
-						"Used pooling and caching strategies to improve performance and reduce load times.",
-						"Optimized SEO by implementing proper server side rendering",
-					],
-				},
-			],
-		},
-		{
-			company: "Keizer Works",
-			logo: "https://cdn.ayushchugh.com/logos/keizer.svg",
-			location: "Remote",
-			website: config.companies.keizerWorks,
-			positions: [
-				{
-					role: "SDE",
-					period: "November 2024 - April 2025",
-					workType: "Freelance",
-					technologies: [
-						"NextJS",
-						"TypeScript",
-						"Tailwind CSS",
-						"NodeJS",
-						"PostgreSQL",
-						"Shadcn",
-					],
-					responsibilities: [
-						"Actively maintaining and contributing to open-source projects that drive innovation and collaboration within the tech community.",
-						"Developing scalable and robust applications to meet client needs and deliver impactful solutions.",
-						"Assisting in managing projects from inception to delivery, ensuring timelines, quality standards, and client expectations are met.",
-						"Supporting the operational and strategic growth of the startup by streamlining workflows and contributing to decision-making processes.",
-						"Worked with external clients of the startup and worked on internal products too",
-					],
-				},
-			],
-		},
-		{
-			company: "Tap Invest",
-			logo: "https://cdn.ayushchugh.com/logos/tapico.png",
-			location: "Remote",
-			website: config.companies.tapInvest,
-			positions: [
-				{
-					role: "Frontend Developer",
-					period: "Apr 2024 - Nov 2024",
-					workType: "Part-time",
-					technologies: [
-						"NextJS",
-						"React",
-						"TypeScript",
-						"MUI",
-						"Tailwind CSS",
-					],
-					responsibilities: [
-						"Developed internal dashboard tools for the startup using React and NextJS, improving operational efficiency",
-						"Translate design concepts into dynamic and responsive web applications.",
-						"Optimize performance and ensure accessibility to deliver user-centric solutions.",
-						"Created complex reusable components to speed up development and reduce maintenance costs.",
-					],
-				},
-			],
-		},
-		{
-			company: "Shri Property",
-			logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
-			location: "Remote",
-			website: config.companies.shriProperty,
+			website: config.companies.sendkit,
 			positions: [
 				{
 					role: "Full-Stack Developer",
-					period: "Dec 2021 - May 2023",
-					workType: "Freelance",
+					period: "Oct 2025 - Present",
+					workType: "Full-time",
 					technologies: [
-						"React",
-						"Node.js",
-						"MongoDB",
-						"Express.js",
 						"TypeScript",
+						"Next.js",
+						"Node.js",
+						"PostgreSQL",
+						"Prisma",
+						"Redis",
 					],
 					responsibilities: [
-						"Developed a real estate platform that simplified the process of finding and listing properties.",
-						"Led the complete development of the website, from UI/UX design to backend integrations.",
-						"Created a fully-featured admin dashboard for operations and management.",
-						"Each property is listed after going throw a proper verification process by operations team.",
+						"Building Sendkit, a cold email platform for agencies and GTM teams.",
+						"Built integrations that let users connect their existing tools and work across them seamlessly inside Sendkit, instead of stitching together disconnected apps.",
+						"Built migration modules so customers can bring their data over from other sequencers with almost no friction, removing one of the biggest reasons teams hesitate to switch platforms.",
+						"Turn customer feedback into concrete product improvements, and work directly with customers to debug issues and guide them through the problems they run into.",
 					],
 				},
 			],
 		},
 		{
-			company: "A2INFINITE",
-			logo: "https://cdn.ayushchugh.com/logos/a2infinite.png",
+			company: "Linkbird",
+			logo: "https://www.google.com/s2/favicons?domain=linkbird.ai&sz=128",
 			location: "Remote",
-			website: "https://a2infinite.com",
+			website: config.companies.linkbird,
 			positions: [
 				{
-					role: "Frontend Developer",
-					period: "Feb 2021 - May 2021",
-					workType: "Freelance",
-					technologies: ["HTML", "CSS", "JavaScript", "SCSS"],
+					role: "Full-Stack Developer",
+					period: "2025",
+					workType: "Full-time",
+					technologies: [
+						"TypeScript",
+						"Next.js",
+						"Node.js",
+						"PostgreSQL",
+						"Redis",
+						"Docker",
+					],
 					responsibilities: [
-						"Developed and maintained a platform that offers downloadable and printable practice worksheets for students.",
-						"Collaborated with the design and backend teams to ensure smooth platform functionality and user experience.",
+						"Led the build from nothing to a working product, on my own and fully remote.",
+						"Built the outreach automation engine that runs LinkedIn campaigns at scale: bulk connection requests, personalized messaging, and automated follow-up sequences.",
+						"Built browser automation that keeps each account's session and identity consistent, so accounts run safely under sustained, high-volume use.",
+						"Designed the product around how GTM agencies actually operate, managing many accounts and campaigns from a single place.",
 					],
 				},
 			],
@@ -256,58 +119,19 @@ const resumeData = {
 	],
 	education: [
 		{
-			institution: "Chandigarh Group of Colleges, Landran, Punjab",
-			logo: "https://cdn.ayushchugh.com/logos/cgc-landran.png",
-			degree:
-				"Bachelor of Technology (B.Tech), Computer Science and Engineering",
-			period: "2025 - 2028",
-			location: "Mohali, India",
-		},
-		{
-			institution:
-				"Chandigarh College of Engineering & Technology (Diploma Wing)",
-			logo: "https://cdn.ayushchugh.com/logos/ccet.png",
-			degree: "Diploma, Computer Science and Engineering",
-			period: "2022 - 2025",
-			location: "Chandigarh, India",
-		},
-		{
-			institution: "Govt Model School Sector 35D Chandigarh India",
-			logo: "",
-			degree: "10th, School",
-			period: "2021 - 2022",
-			location: "Chandigarh, India",
-		},
-	],
-	volunteering: [
-		{
-			organization: "Hack With India-Chapter CEC-CGC",
-			logo: "https://cdn.ayushchugh.com/logos/hwi.jpeg",
-			role: "Technical Lead",
-			period: "Aug 2025 - Present",
-			location: "Chandigarh, India",
-			responsibilities: [
-				"I am responsible to manage all the technical aspects of the club and help the students to learn and grow in the field of technology.",
-			],
-		},
-		{
-			organization: "Innovation Club, CCET",
-			logo: "https://cdn.ayushchugh.com/logos/innovationclub.png",
-			role: "Team Lead",
-			period: "Oct 2023 - Nov 2024",
-			location: "Chandigarh, India",
-			responsibilities: [
-				"Leading a team to innovate and implement technology projects in the institution.",
-				"Organizing hackathons and coding competitions, encouraging student participation and skills development.",
-			],
+			institution: "Guru Gobind Singh Indraprastha University (IPU)",
+			logo: "https://www.google.com/s2/favicons?domain=ipu.ac.in&sz=128",
+			degree: "Bachelor of Technology (B.Tech), Information Technology",
+			period: "2022 - 2026",
+			location: "Delhi, India",
 		},
 	],
 };
 
 export default function WorkPage() {
 	const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-		{ name: "Home", url: "https://ayushchugh.com" },
-		{ name: "Resume", url: "https://ayushchugh.com/resume" },
+		{ name: "Home", url: "https://indrajitsahani.com" },
+		{ name: "Resume", url: "https://indrajitsahani.com/resume" },
 	]);
 
 	const profileJsonLd = {
@@ -315,29 +139,20 @@ export default function WorkPage() {
 		"@type": "ProfilePage",
 		mainEntity: {
 			"@type": "Person",
-			name: "Ayush Chugh",
-			url: "https://ayushchugh.com",
-			jobTitle: "Full Stack Web Developer",
+			name: "Indrajit Sahani",
+			url: "https://indrajitsahani.com",
+			jobTitle: "Full-Stack Developer",
 			worksFor: [
 				{
 					"@type": "Organization",
-					name: "Avenue Ticketing",
-					url: config.companies.avenueTicketing,
-				},
-				{
-					"@type": "Organization",
-					name: "Ravix Studio",
-					url: config.companies.ravixStudio,
+					name: "Enrich Labs",
+					url: config.companies.enrichLabs,
 				},
 			],
 			alumniOf: [
 				{
 					"@type": "EducationalOrganization",
-					name: "Chandigarh Group of Colleges, Landran",
-				},
-				{
-					"@type": "EducationalOrganization",
-					name: "Chandigarh College of Engineering & Technology",
+					name: "Guru Gobind Singh Indraprastha University",
 				},
 			],
 			knowsAbout: [
@@ -345,8 +160,9 @@ export default function WorkPage() {
 				"Next.js",
 				"TypeScript",
 				"Node.js",
+				"Go",
 				"PostgreSQL",
-				"AWS",
+				"Redis",
 				"Docker",
 			],
 		},
@@ -372,8 +188,23 @@ export default function WorkPage() {
 				</h1>
 			</div>
 			<p className="sr-only">
-				Professional resume of Ayush Chugh, a Full Stack Web Developer from Mohali, India. Currently Team Lead at Avenue Ticketing. Previously Co-founder and CTO at Ravix Studio. Experienced in React, Next.js, TypeScript, Node.js, PostgreSQL, AWS, and Docker. Work history spans from 2021 to present, including roles at Vibranium Soft, Keizer Works, Tap Invest, Shri Property, and A2INFINITE. Education includes a B.Tech in Computer Science from Chandigarh Group of Colleges and a Diploma from CCET.
+				Professional resume of Indrajit Sahani, a product-minded Full-Stack Developer. Currently building Sendkit, a cold email platform, at Enrich Labs. Previously built Linkbird, a LinkedIn automation platform, from the ground up. Experienced in React, Next.js, TypeScript, Node.js, Go, PostgreSQL, Redis, and Docker. Holds a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University, Delhi.
 			</p>
+
+			{/* Traditional PDF résumé */}
+			<div className="not-prose no-print mb-8 flex flex-col gap-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-4 sm:flex-row sm:items-center sm:justify-between">
+				<p className="text-sm text-neutral-600 dark:text-neutral-400">
+					Prefer a traditional one-page résumé? View or download the PDF version.
+				</p>
+				<a
+					href={config.resume.drive}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+				>
+					View résumé PDF →
+				</a>
+			</div>
 
 			{/* Work Section */}
 			<div className="prose prose-neutral dark:prose-invert">
@@ -385,21 +216,32 @@ export default function WorkPage() {
 
 			<hr className="my-6 border-neutral-100 dark:border-neutral-800" />
 
+			{/* Technical Toolkit Section */}
+			<div className="prose prose-neutral dark:prose-invert">
+				<h2 className="font-medium text-2xl mb-4">Technical Toolkit</h2>
+				<div className="not-prose space-y-4">
+					{toolkit.map(group => (
+						<div key={group.area}>
+							<p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">
+								{group.area}
+							</p>
+							<div className="flex gap-2 flex-wrap">
+								{group.tools.map(tool => (
+									<Chip key={tool} tech={tool} />
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+
 			{/* Education Section */}
 			<div className="prose prose-neutral dark:prose-invert">
 				<h2 className="font-medium text-2xl mb-4">Education</h2>
 				{resumeData.education.map((edu, index) => (
 					<EducationItem key={index} edu={edu} />
-				))}
-			</div>
-
-			<hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-
-			{/* Volunteering Section */}
-			<div className="prose prose-neutral dark:prose-invert">
-				<h2 className="font-medium text-2xl mb-4">Volunteering</h2>
-				{resumeData.volunteering.map((volunteer, index) => (
-					<VolunteeringItem key={index} volunteer={volunteer} />
 				))}
 			</div>
 		</section>

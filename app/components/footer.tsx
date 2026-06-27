@@ -1,9 +1,8 @@
 import {
-	DiscordLogo,
 	EnvelopeSimple,
 	GithubLogo,
 	LinkedinLogo,
-	RssSimple,
+	NotePencil,
 	XLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import type { FC } from "react";
@@ -31,23 +30,18 @@ const socialLinks = [
 		logo: LinkedinLogo,
 	},
 	{
-		name: "Discord",
-		url: config.socials.discord,
-		logo: DiscordLogo,
-	},
-	{
-		name: "RSS Feed",
-		url: "/rss",
-		logo: RssSimple,
+		name: "Blog",
+		url: config.socials.blog,
+		logo: NotePencil,
 	},
 ];
 
 const Footer: FC = () => {
 	return (
 		<footer className="mt-8" aria-label="Footer">
-			<h2 className="sr-only">Connect with Ayush Chugh on social media</h2>
+			<h2 className="sr-only">Connect with Indrajit Sahani on social media</h2>
 			<p className="sr-only">
-				Follow Ayush Chugh on GitHub, X (Twitter), LinkedIn, and Discord. Subscribe via RSS feed or send an email to get in touch about freelance web development projects.
+				Follow Indrajit Sahani on GitHub, X (Twitter), and LinkedIn, read his blog, or send an email to get in touch about full-stack development roles, freelance work, and collaborations.
 			</p>
 			<nav aria-label="Social media links" className="flex justify-center">
 				<ul className="flex gap-4">
@@ -57,7 +51,7 @@ const Footer: FC = () => {
 							href={social.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label={`${social.name} - Connect with Ayush Chugh`}
+							aria-label={`${social.name} - Connect with Indrajit Sahani`}
 							className="inline-block p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full"
 						>
 							<social.logo size={24} aria-hidden="true" />

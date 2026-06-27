@@ -2,25 +2,19 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: "Ayush Chugh",
-		short_name: "ayushchugh",
+		name: "Indrajit Sahani",
+		short_name: "indrajitsahani",
 		description:
-			"Passionate full stack developer from India. On the way to master programming",
+			"Product-minded full-stack developer. Building real products that teams depend on.",
 		start_url: "/",
-		id: "com.ayushchugh",
+		id: "com.indrajitsahani",
 		display: "standalone",
 		background_color: "#ffffff",
 		theme_color: "#000000",
 		icons: [
 			{
-				src: "/favicon/web-app-manifest-192x192.png",
-				sizes: "192x192",
-				type: "image/png",
-				purpose: "any",
-			},
-			{
-				src: "/favicon/web-app-manifest-512x512.png",
-				sizes: "512x512",
+				src: "/logo.png",
+				sizes: "any",
 				type: "image/png",
 				purpose: "any",
 			},

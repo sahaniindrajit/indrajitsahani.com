@@ -40,7 +40,7 @@ export default function NotFound() {
 				<p>
 					Or if you think this is a bug,{" "}
 					<a
-						href="https://github.com/aayushchugh/ayushchugh.com/issues"
+						href="https://github.com/sahaniindrajit/indrajitsahani.com/issues"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="underline hover:no-underline"
