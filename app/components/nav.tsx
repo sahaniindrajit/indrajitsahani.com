@@ -16,18 +16,24 @@ export function Navbar() {
 			window.open(drive, "_blank", "noopener,noreferrer");
 
 		try {
-			const res = await fetch(pdf, { method: "HEAD" });
-			if (!res.ok) {
+			// Fetch the PDF and print it from a blob URL. Going through a blob
+			// (rather than pointing the iframe at the file directly) avoids the
+			// X-Frame-Options restriction and lets us confirm we actually got a
+			// PDF back, not a 404 page.
+			const res = await fetch(pdf, { cache: "no-store" });
+			const contentType = res.headers.get("content-type") || "";
+			if (!res.ok || !contentType.includes("pdf")) {
 				openDrive();
 				return;
 			}
 
+			const blobUrl = URL.createObjectURL(await res.blob());
 			const frameId = "resume-print-frame";
 			document.getElementById(frameId)?.remove();
 
 			const iframe = document.createElement("iframe");
 			iframe.id = frameId;
-			iframe.src = pdf;
+			iframe.src = blobUrl;
 			iframe.setAttribute("aria-hidden", "true");
 			iframe.style.position = "fixed";
 			iframe.style.right = "0";
@@ -35,7 +41,6 @@ export function Navbar() {
 			iframe.style.width = "0";
 			iframe.style.height = "0";
 			iframe.style.border = "0";
-			iframe.style.visibility = "hidden";
 			iframe.onload = () => {
 				try {
 					iframe.contentWindow?.focus();
@@ -43,6 +48,7 @@ export function Navbar() {
 				} catch {
 					openDrive();
 				}
+				setTimeout(() => URL.revokeObjectURL(blobUrl), 60_000);
 			};
 			document.body.appendChild(iframe);
 		} catch {

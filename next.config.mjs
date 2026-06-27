@@ -6,6 +6,7 @@ const ContentSecurityPolicy = `
     media-src 'self';
     connect-src * www.google-analytics.com;
     font-src 'self' data:;
+    frame-src 'self' blob:;
 `;
 
 const securityHeaders = [
@@ -19,7 +20,7 @@ const securityHeaders = [
 	},
 	{
 		key: "X-Frame-Options",
-		value: "DENY",
+		value: "SAMEORIGIN",
 	},
 	{
 		key: "X-Content-Type-Options",
