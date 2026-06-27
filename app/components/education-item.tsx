@@ -22,6 +22,7 @@ const EducationItem: FC<EducationItemProps> = ({ edu }) => {
             width={20}
             height={20}
             className="mr-4"
+            unoptimized
           />
         )}
         <span className={edu.logo ? "ml-2" : ""}>{edu.institution}</span>

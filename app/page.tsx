@@ -139,6 +139,7 @@ export default function Page() {
 								height={16}
 								width={16}
 								className="pr-1"
+								unoptimized
 							/>
 							Enrich Labs
 						</Badge>
@@ -159,6 +160,7 @@ export default function Page() {
 								height={16}
 								width={16}
 								className="pr-1"
+								unoptimized
 							/>
 							Linkbird
 						</Badge>
