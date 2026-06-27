@@ -55,12 +55,12 @@ export default function ContactPage() {
 				Let's build something 📧
 			</h1>
 			<p className="sr-only">
-				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to remote roles, freelance work, and collaborations—especially with early-stage teams shipping fast. Reach out via email or a direct message on X.
+				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to remote roles, freelance work, and collaborations, especially with early-stage teams shipping fast. Reach out via email or a direct message on X.
 			</p>
 
 			<div className="prose prose-neutral dark:prose-invert">
 				<p>
-					I'm open to remote roles, freelance work, and collaborations—especially
+					I'm open to remote roles, freelance work, and collaborations, especially
 					with early-stage teams shipping fast. The fastest way to reach me is a
 					DM on X or an email. I'll get back to you.
 				</p>

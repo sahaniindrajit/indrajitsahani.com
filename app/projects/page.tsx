@@ -43,22 +43,24 @@ const projectsData = [
 	{
 		project: "SketchSync",
 		description:
-			"A real-time collaborative whiteboard—a multiplayer canvas for sketching and brainstorming, with low-latency live sync so teams can draw together in real time. Built to stay smooth under concurrent editing.",
+			"A real-time collaborative whiteboard. A multiplayer canvas for sketching and brainstorming, with low-latency live sync so teams can draw together in real time. Built to stay smooth under concurrent editing.",
 		technologies: ["React", "React-Konva", "WebSocket", "Node.js", "Express"],
 		website: "https://sketchsync.onrender.com/",
 		sourceCode: "https://github.com/sahaniindrajit/sketchsync",
 		category: "Full Stack",
 		workType: "Personal",
+		notable: true,
 	},
 	{
 		project: "PDF-Talk",
 		description:
-			"Ask questions to any PDF. Upload a document and ask it questions in plain language—uses embeddings and semantic search (RAG) to return accurate, context-aware answers, built for document-heavy workflows.",
+			"Ask questions to any PDF. Upload a document and ask it questions in plain language. It uses embeddings and semantic search (RAG) to return accurate, context-aware answers, built for document-heavy workflows.",
 		technologies: ["Next.js", "Langchain", "Pinecone", "Hugging Face", "MongoDB"],
 		website: "https://pdf-talk-opal.vercel.app/",
 		sourceCode: "https://github.com/sahaniindrajit/Pdf-talk",
 		category: "AI / Full Stack",
 		workType: "Personal",
+		notable: true,
 	},
 	{
 		project: "Rezumi",
@@ -68,11 +70,12 @@ const projectsData = [
 		sourceCode: "https://github.com/sahaniindrajit/Rezumi",
 		category: "AI / Full Stack",
 		workType: "Personal",
+		notable: true,
 	},
 	{
 		project: "NotionLeager",
 		description:
-			"A Telegram bot for expense tracking that uses Notion as the database backend. Written in Go—a deliberate step outside the JS ecosystem.",
+			"A Telegram bot for expense tracking that uses Notion as the database backend. Written in Go, a deliberate step outside the JS ecosystem.",
 		technologies: ["Go", "Telegram Bot API", "Notion API"],
 		sourceCode: "https://github.com/sahaniindrajit/NotionLeager",
 		category: "Backend",
@@ -171,6 +174,7 @@ export default function ProjectsPage() {
 						sourceCode={project.sourceCode}
 						category={project.category}
 						workType={project.workType}
+						notable={project.notable}
 					/>
 				))}
 			</div>

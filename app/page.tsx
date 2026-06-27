@@ -121,7 +121,7 @@ export default function Page() {
 				</div>
 				<p className="text-lg prose prose-neutral dark:prose-invert">
 					I'm a full-stack developer with a product mindset, building real
-					products that teams depend on—from idea to launch.
+					products that teams depend on and taking them from idea to launch.
 				</p>
 			</header>
 
@@ -143,7 +143,7 @@ export default function Page() {
 							Enrich Labs
 						</Badge>
 					</span>
-					, where I'm building <strong>Sendkit</strong>—a cold email platform
+					, where I'm building <strong>Sendkit</strong>, a cold email platform
 					for agencies and GTM teams. I build the integrations that let users
 					connect their existing tools, the migration modules that make
 					switching platforms painless, and turn customer feedback directly into
@@ -163,7 +163,7 @@ export default function Page() {
 							Linkbird
 						</Badge>
 					</span>{" "}
-					from nothing to a working product, fully remote and on my own—a
+					from nothing to a working product, fully remote and on my own. It's a
 					LinkedIn automation platform for mass outreach built for GTM agencies.
 					For more details, check out my <Link href="/resume">resume</Link>.
 				</p>
@@ -175,7 +175,7 @@ export default function Page() {
 				<h2>How I Work</h2>
 				<p>
 					I care about <em>why</em> something gets built and whether it actually
-					helps the people using it—not just whether the code runs. I've shipped
+					helps the people using it, not just whether the code runs. I've shipped
 					real products that teams depend on, taking them from idea to launch and
 					sharpening them based on how people actually use them.
 				</p>

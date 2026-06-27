@@ -13,6 +13,7 @@ interface ProjectCardProps {
 	sourceCode?: string;
 	category?: string;
 	workType?: string;
+	notable?: boolean;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -24,6 +25,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 	sourceCode,
 	category,
 	workType,
+	notable,
 }) => {
 	const primaryLink = website || sourceCode || "#";
 
@@ -46,6 +48,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
 						{title}
 					</Link>
 				</h3>
+				{notable && (
+					<span className="not-prose inline-flex items-center gap-1 ml-3 px-2 py-0.5 text-xs font-medium rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+						<span aria-hidden="true">★</span> Top Project
+					</span>
+				)}
 			</div>
 			{(category || workType) && (
 				<p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">

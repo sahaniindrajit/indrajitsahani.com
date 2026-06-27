@@ -112,7 +112,7 @@ const resumeData = {
 						"Led the build from nothing to a working product, on my own and fully remote.",
 						"Built the outreach automation engine that runs LinkedIn campaigns at scale: bulk connection requests, personalized messaging, and automated follow-up sequences.",
 						"Built browser automation that keeps each account's session and identity consistent, so accounts run safely under sustained, high-volume use.",
-						"Designed the product around how GTM agencies actually operate—managing many accounts and campaigns from a single place.",
+						"Designed the product around how GTM agencies actually operate, managing many accounts and campaigns from a single place.",
 					],
 				},
 			],
