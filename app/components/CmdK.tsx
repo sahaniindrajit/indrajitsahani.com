@@ -21,8 +21,6 @@ const Example = () => {
 		"/projects": "CodeBracketSquareIcon",
 		"/resume": "BriefcaseIcon",
 		"/contact": "PhoneIcon",
-		"/blog": "PencilIcon",
-		"/community": "UsersIcon",
 	};
 
 	const filteredItems = filterItems(

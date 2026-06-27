@@ -6,54 +6,45 @@ import type { Metadata } from "next";
 import Separator from "./components/separator";
 import GitHubCalendar from "react-github-calendar";
 import { config } from "./config/config";
-import ExperienceCounter from "./components/experience-counter";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ayushchugh.com"),
-	title: "Ayush Chugh - Full Stack Developer from India",
+	metadataBase: new URL("https://indrajitsahani.com"),
+	title: "Indrajit Sahani - Full-Stack Developer",
 	description:
-		"Ayush Chugh is a Full Stack Web Developer from Mohali, India specializing in React, Next.js, TypeScript & Node.js. Team Lead at Avenue Ticketing.",
+		"Indrajit Sahani is a product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
 	keywords: [
-		"Ayush Chugh",
+		"Indrajit Sahani",
 		"Full Stack Developer",
 		"Web Developer",
 		"React Developer",
 		"Next.js Developer",
 		"TypeScript Developer",
 		"Node.js Developer",
+		"Go Developer",
 		"Software Engineer",
-		"India Developer",
-		"Mohali Developer",
-		"Freelance Developer India",
+		"Sendkit",
+		"Enrich Labs",
+		"Remote Developer",
 		"Portfolio",
 	],
 	alternates: {
 		canonical: "/",
 	},
 	openGraph: {
-		title: "Ayush Chugh - Full Stack Developer from India",
+		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
-			"Full Stack Web Developer from Mohali, India specializing in React, Next.js, TypeScript & Node.js. Team Lead at Avenue Ticketing.",
-		url: "https://ayushchugh.com",
-		siteName: "Ayush Chugh's Portfolio",
-		images: [
-			{
-				url: "https://cdn.ayushchugh.com/open-graph/business-card.png",
-				width: 1200,
-				height: 630,
-				alt: "Ayush Chugh - Full Stack Developer Portfolio",
-			},
-		],
+			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+		url: "https://indrajitsahani.com",
+		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Ayush Chugh - Full Stack Developer from India",
+		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
-			"Full Stack Web Developer from Mohali, India specializing in React, Next.js, TypeScript & Node.js. Team Lead at Avenue Ticketing.",
-		images: ["https://cdn.ayushchugh.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		site: "@aayushchugh",
+			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+		creator: "@sahani_indrajit",
+		site: "@sahani_indrajit",
 	},
 };
 
@@ -61,20 +52,15 @@ export default function Page() {
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "Person",
-		name: "Ayush Chugh",
-		url: "https://ayushchugh.com",
-		image: "https://cdn.ayushchugh.com/open-graph/business-card.png",
-		jobTitle: "Full Stack Web Developer",
+		name: "Indrajit Sahani",
+		url: "https://indrajitsahani.com",
+		image: "https://indrajitsahani.com/indrajit.png",
+		jobTitle: "Full-Stack Developer",
 		worksFor: [
 			{
 				"@type": "Organization",
-				name: "Avenue Ticketing",
-				url: config.companies.avenueTicketing,
-			},
-			{
-				"@type": "Organization",
-				name: "Ravix Studio",
-				url: config.companies.ravixStudio,
+				name: "Enrich Labs",
+				url: config.companies.enrichLabs,
 			},
 		],
 		sameAs: [
@@ -88,11 +74,11 @@ export default function Page() {
 			"Next.js",
 			"TypeScript",
 			"Node.js",
+			"Go",
 			"Web Development",
 		],
 		address: {
 			"@type": "PostalAddress",
-			addressLocality: "Mohali",
 			addressCountry: "India",
 		},
 	};
@@ -104,169 +90,110 @@ export default function Page() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
 			<p className="sr-only">
-				Ayush Chugh is a Full Stack Web Developer based in Mohali, India. He specializes in building modern web applications using React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS. Currently serving as Team Lead at Avenue Ticketing, Ayush has professional experience building production applications since 2021. He is available for freelance web development projects and collaborations.
+				Indrajit Sahani is a product-minded full-stack developer who builds real products teams depend on. He specializes in React, Next.js, TypeScript, Node.js, Go, PostgreSQL, and Redis. Currently building Sendkit, a cold email platform, at Enrich Labs, and previously built Linkbird, a LinkedIn automation platform. He is open to remote roles, freelance work, and collaborations.
 			</p>
 			<header className="mb-6">
-				<div className="flex items-center gap-3 mb-2 flex-wrap">
-					<h1 className='font-medium text-2xl tracking-tight font-["monospace"]'>
-						Sup, I'm Ayush Chugh 👋
-					</h1>
-					{config.profile.availableForFreelance && (
-						<span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800 rounded-full">
-							<span className="relative flex h-2 w-2">
-								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-								<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+				<div className="flex items-center gap-4 mb-4">
+					<Image
+						src="/indrajit.png"
+						alt="Indrajit Sahani"
+						width={72}
+						height={72}
+						priority
+						className="rounded-full"
+					/>
+					<div>
+						<div className="flex items-center gap-3 flex-wrap">
+							<h1 className='font-medium text-2xl tracking-tight font-["monospace"]'>
+								Hey, I'm Indrajit Sahani 👋
+							</h1>
+						</div>
+						{config.profile.availableForFreelance && (
+							<span className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800 rounded-full">
+								<span className="relative flex h-2 w-2">
+									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+									<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+								</span>
+								Open to roles & freelance
 							</span>
-							Available for freelance
-						</span>
-					)}
+						)}
+					</div>
 				</div>
 				<p className="text-lg prose prose-neutral dark:prose-invert">
-					I'm a Full Stack Web Developer from Mohali, India, with{" "}
-					<ExperienceCounter />, trying to make the internet a bit cooler one
-					website at a time.
+					I'm a full-stack developer with a product mindset, building real
+					products that teams depend on—from idea to launch.
 				</p>
 			</header>
 
 			<Separator />
 
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Professional Work</h2>
+				<h2>What I'm Building Now</h2>
 				<p>
-					I specialize in creating user-friendly digital experiences. Currently,
-					I'm a <strong>Team Lead</strong> at{" "}
+					I'm currently a <strong>Full-Stack Developer</strong> at{" "}
 					<span className="not-prose">
-						<Badge href={config.companies.avenueTicketing}>
+						<Badge href={config.companies.sendkit}>
 							<Image
-								src={"https://cdn.ayushchugh.com/logos/avenue.jpeg"}
-								alt="Avenue Ticketing"
+								src="https://www.google.com/s2/favicons?domain=sendkit.ai&sz=128"
+								alt="Sendkit"
 								height={16}
 								width={16}
-								className={"pr-1"}
+								className="pr-1"
 							/>
-							Avenue Ticketing
+							Enrich Labs
 						</Badge>
 					</span>
-					—proudly the youngest team leader there—where I lead a team of 5
-					developers building a ticketing platform for event organizers and
-					attendees. From Nov 2025 to March 2026 I was also the{" "}
-					<strong>Co-founder & CTO</strong> at{" "}
-					<span className="not-prose">
-						<Badge href={config.companies.ravixStudio}>
-							<Image
-								src={"https://cdn.ayushchugh.com/logos/ravix-dark.png"}
-								alt="Ravix Studio"
-								height={16}
-								width={16}
-								className={"pr-1"}
-							/>
-							Ravix Studio
-						</Badge>
-					</span>
-					, a startup building SAAS products, which is currently paused.
+					, where I'm building <strong>Sendkit</strong>—a cold email platform
+					for agencies and GTM teams. I build the integrations that let users
+					connect their existing tools, the migration modules that make
+					switching platforms painless, and turn customer feedback directly into
+					product improvements.
 				</p>
 				<p>
-					Previously, I worked with{" "}
+					Before this, I led the build of{" "}
 					<span className="not-prose">
-						<Badge href={config.companies.vibraniumSoft}>
+						<Badge href={config.companies.linkbird}>
 							<Image
-								src={"https://cdn.ayushchugh.com/logos/vibraniumsoft.jpeg"}
-								alt="Vibranium Soft"
+								src="https://www.google.com/s2/favicons?domain=linkbird.ai&sz=128"
+								alt="Linkbird"
 								height={16}
 								width={16}
-								className={"pr-1"}
+								className="pr-1"
 							/>
-							Vibranium Soft
+							Linkbird
 						</Badge>
 					</span>{" "}
-					where we built a B2B flight booking platform for the travel industry,{" "}
-					<span className="not-prose">
-						<Badge href={config.companies.tapInvest}>
-							<Image
-								src={"https://cdn.ayushchugh.com/logos/tapico.png"}
-								alt="Tap Invest"
-								height={16}
-								width={16}
-								className={"pr-1"}
-							/>
-							Tap Invest
-						</Badge>
-					</span>
-					, where I developed internal dashboard tools and created landing pages
-					for their investment platform. For more details about my experience,
-					check out my <Link href="/resume">resume</Link>.
+					from nothing to a working product, fully remote and on my own—a
+					LinkedIn automation platform for mass outreach built for GTM agencies.
+					For more details, check out my <Link href="/resume">resume</Link>.
 				</p>
 			</div>
 
 			<Separator />
 
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>What Makes Me Different</h2>
+				<h2>How I Work</h2>
 				<p>
-					I'm not just another developer. I take full ownership of every project
-					I work on, which is how I became the youngest team leader at Avenue
-					Ticketing. I approach problems with both a technical and business
-					mindset—I understand that great code means nothing if it doesn't solve
-					real problems.
+					I care about <em>why</em> something gets built and whether it actually
+					helps the people using it—not just whether the code runs. I've shipped
+					real products that teams depend on, taking them from idea to launch and
+					sharpening them based on how people actually use them.
 				</p>
 				<p>
-					While I embrace AI-assisted development, I do it differently. I
-					leverage AI to build powerful systems faster, but always with proper
-					supervision, code review, and architectural oversight. This allows me
-					to maintain quality while maximizing productivity—the best of both
-					worlds.
+					I do my best work in small, fast-moving teams where I can own what I
+					build. I treat side projects like products too: each one solves a real
+					problem and actually ships.
 				</p>
 			</div>
 
 			<Separator />
-
-			{/* <div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Leadership & Community</h2>
-				<p>
-					As the Team Lead at the Innovation Club of{" "}
-					<a href="https://ccetdiploma.edu.in/" target="_blank">
-						CCET College
-					</a>
-					, I've learned how to lead a team and stay organized. I also assist in{" "}
-					<a href="https://chdtechnicaleducation.gov.in/" target="_blank">
-						ICT
-					</a>{" "}
-					training sessions, teaching government employees essential computer
-					skills. Additionally, I help organize the <i>Talent Hunt</i> cultural
-					program and serve as the student coordinator for <i>Jhalak</i>, our
-					college's digital newsletter.
-				</p>
-			</div>
-
-			<Separator /> */}
-
-			{/* <div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Personal Interests</h2>
-				<p>
-					Outside of work, I enjoy exploring Vedic astrology, playing the
-					guitar, and spending time with friends. I'm also pursuing a diploma in
-					Computer Science Engineering (CSE).
-				</p>
-			</div>
-
-			<Separator /> */}
 
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>GitHub Contributions</h2>
 				<p className="sr-only">
-					Ayush Chugh's GitHub contribution graph showing daily open-source coding activity. Ayush actively contributes to repositories involving React, Next.js, TypeScript, and Node.js projects on GitHub as aayushchugh.
+					Indrajit Sahani's GitHub contribution graph showing daily open-source coding activity on React, Next.js, TypeScript, Node.js, and Go projects as sahaniindrajit.
 				</p>
-				<GitHubCalendar username="aayushchugh" />
-			</div>
-
-			<Separator />
-
-			<div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Writing</h2>
-				<p>
-					I've started writing <Link href="/blog">blogs</Link> to help others
-					improve their engineering skills. Stay tuned for more content!
-				</p>
+				<GitHubCalendar username="sahaniindrajit" />
 			</div>
 
 			<div className="prose prose-neutral dark:prose-invert">
@@ -275,18 +202,9 @@ export default function Page() {
 				</article>
 			</div>
 
-			<nav aria-label="Quick links to connect with Ayush Chugh">
+			<nav aria-label="Quick links to connect with Indrajit Sahani">
 				<h2 className="sr-only">Get in Touch</h2>
 				<ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
-					<li>
-						<Link
-							className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-							href={config.socials.community}
-						>
-							<ArrowIcon />
-							<p className="h-7 ml-2">Join my community</p>
-						</Link>
-					</li>
 					<li>
 						<a
 							className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
@@ -295,7 +213,18 @@ export default function Page() {
 							href={config.socials.twitter}
 						>
 							<ArrowIcon />
-							<p className="h-7 ml-2">Follow me</p>
+							<p className="h-7 ml-2">Follow me on X</p>
+						</a>
+					</li>
+					<li>
+						<a
+							className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+							rel="noopener noreferrer"
+							target="_blank"
+							href={config.socials.blog}
+						>
+							<ArrowIcon />
+							<p className="h-7 ml-2">Read my blog</p>
 						</a>
 					</li>
 				</ul>
@@ -305,13 +234,13 @@ export default function Page() {
 						className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all text-neutral-600 dark:text-neutral-300 mt-3"
 						rel="noopener noreferrer"
 						target="_blank"
-						href={`mailto:${config.socials.email}?subject=Hello Ayush!`}
+						href={`mailto:${config.socials.email}?subject=Hello Indrajit!`}
 					>
 						<p className="h-7">
 							<span className="mr-2 text-neutral-600">📧</span>
 							{config.socials.email}
 						</p>
-						<span className="sr-only">Send an email to Ayush Chugh for freelance inquiries or collaboration</span>
+						<span className="sr-only">Send an email to Indrajit Sahani for freelance inquiries or collaboration</span>
 					</a>
 				</div>
 			</nav>

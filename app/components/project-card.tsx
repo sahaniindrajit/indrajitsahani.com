@@ -9,7 +9,8 @@ interface ProjectCardProps {
 	logo?: string;
 	description: string;
 	technologies: string[];
-	website: string;
+	website?: string;
+	sourceCode?: string;
 	category?: string;
 	workType?: string;
 }
@@ -20,9 +21,12 @@ const ProjectCard: FC<ProjectCardProps> = ({
 	description,
 	technologies,
 	website,
+	sourceCode,
 	category,
 	workType,
 }) => {
+	const primaryLink = website || sourceCode || "#";
+
 	return (
 		<div className="mb-6">
 			<div className="flex items-center mb-2">
@@ -38,7 +42,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 					<p className="mt-0 mb-0">{"->"}</p>
 				)}
 				<h3 className="font-medium text-xl tracking-tight mt-0 mb-0 ml-1">
-					<Link href={website} target="_blank" rel="noopener noreferrer">
+					<Link href={primaryLink} target="_blank" rel="noopener noreferrer">
 						{title}
 					</Link>
 				</h3>
@@ -58,6 +62,30 @@ const ProjectCard: FC<ProjectCardProps> = ({
 					<Chip key={idx} tech={tech} />
 				))}
 			</div>
+			{(website || sourceCode) && (
+				<div className="flex flex-wrap gap-4 mt-3 text-sm">
+					{website && (
+						<a
+							href={website}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="underline hover:no-underline"
+						>
+							Live ↗
+						</a>
+					)}
+					{sourceCode && (
+						<a
+							href={sourceCode}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="underline hover:no-underline"
+						>
+							Code ↗
+						</a>
+					)}
+				</div>
+			)}
 			<Separator />
 		</div>
 	);

@@ -12,7 +12,7 @@ export default function robots() {
 				crawlDelay: 0,
 			},
 		],
-		sitemap: "https://ayushchugh.com/sitemap.xml",
-		host: "https://ayushchugh.com",
+		sitemap: "https://indrajitsahani.com/sitemap.xml",
+		host: "https://indrajitsahani.com",
 	};
 }

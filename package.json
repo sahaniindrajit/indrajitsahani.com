@@ -1,12 +1,11 @@
 {
-  "name": "ayushchugh.com",
+  "name": "indrajitsahani.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "build-only": "next build",
     "start": "next start",
-    "setup": "node ./setup.mjs",
     "format": "pnpm biome format --write ./app",
     "lint": "pnpm biome lint --write ./app"
   },
