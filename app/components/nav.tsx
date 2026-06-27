@@ -6,8 +6,48 @@ import Chip from "./chip";
 import { config } from "../config/config";
 
 export function Navbar() {
-	const handlePrint = () => {
-		window.print();
+	// Print the traditional PDF résumé instead of the web page. We prefer the
+	// same-origin local copy (public/resume.pdf) because cross-origin PDFs
+	// (e.g. Google Drive) can't be triggered to print programmatically. If the
+	// local copy isn't present, fall back to opening the Drive link.
+	const handlePrintResume = async () => {
+		const { pdf, drive } = config.resume;
+		const openDrive = () =>
+			window.open(drive, "_blank", "noopener,noreferrer");
+
+		try {
+			const res = await fetch(pdf, { method: "HEAD" });
+			if (!res.ok) {
+				openDrive();
+				return;
+			}
+
+			const frameId = "resume-print-frame";
+			document.getElementById(frameId)?.remove();
+
+			const iframe = document.createElement("iframe");
+			iframe.id = frameId;
+			iframe.src = pdf;
+			iframe.setAttribute("aria-hidden", "true");
+			iframe.style.position = "fixed";
+			iframe.style.right = "0";
+			iframe.style.bottom = "0";
+			iframe.style.width = "0";
+			iframe.style.height = "0";
+			iframe.style.border = "0";
+			iframe.style.visibility = "hidden";
+			iframe.onload = () => {
+				try {
+					iframe.contentWindow?.focus();
+					iframe.contentWindow?.print();
+				} catch {
+					openDrive();
+				}
+			};
+			document.body.appendChild(iframe);
+		} catch {
+			openDrive();
+		}
 	};
 	const currentRoute = usePathname();
 
@@ -38,10 +78,10 @@ export function Navbar() {
 						<ISTClock />
 						{currentRoute === "/resume" && (
 							<Chip
-								onClick={handlePrint}
+								onClick={handlePrintResume}
 								className="flex items-center gap-1.5 whitespace-nowrap"
 							>
-								print <span>🖨️</span>
+								print résumé <span>🖨️</span>
 							</Chip>
 						)}
 					</div>

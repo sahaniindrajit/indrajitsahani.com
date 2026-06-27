@@ -18,6 +18,15 @@ export const config = {
 	education: {
 		ipu: "http://www.ipu.ac.in/",
 	},
+	resume: {
+		// Local copy used for the in-browser print button (same-origin, so it can
+		// auto-print). Drop the PDF at public/resume.pdf to enable local printing.
+		pdf: "/resume.pdf",
+		// Public Google Drive link, used for "View PDF" and as a print fallback
+		// until the local copy exists.
+		drive:
+			"https://drive.google.com/file/d/1-guiwqpad-7ZBwQLw5DvBr_gZXdYpG4O/view?usp=sharing",
+	},
 	socials: {
 		email: "indrajit38mig@gmail.com",
 		github: "https://github.com/sahaniindrajit",

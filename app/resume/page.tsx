@@ -76,7 +76,6 @@ const resumeData = {
 						"TypeScript",
 						"Next.js",
 						"Node.js",
-						"Hono",
 						"PostgreSQL",
 						"Prisma",
 						"Redis",
@@ -191,6 +190,21 @@ export default function WorkPage() {
 			<p className="sr-only">
 				Professional resume of Indrajit Sahani, a product-minded Full-Stack Developer. Currently building Sendkit, a cold email platform, at Enrich Labs. Previously built Linkbird, a LinkedIn automation platform, from the ground up. Experienced in React, Next.js, TypeScript, Node.js, Go, PostgreSQL, Redis, and Docker. Holds a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University, Delhi.
 			</p>
+
+			{/* Traditional PDF résumé */}
+			<div className="not-prose no-print mb-8 flex flex-col gap-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-4 sm:flex-row sm:items-center sm:justify-between">
+				<p className="text-sm text-neutral-600 dark:text-neutral-400">
+					Prefer a traditional one-page résumé? View or download the PDF version.
+				</p>
+				<a
+					href={config.resume.drive}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+				>
+					View résumé PDF →
+				</a>
+			</div>
 
 			{/* Work Section */}
 			<div className="prose prose-neutral dark:prose-invert">
