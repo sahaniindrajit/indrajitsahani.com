@@ -1,12 +1,20 @@
 export const config = {
 	profile: {
+		name: "Indrajit Sahani",
+		jobTitle: "Full-Stack Developer",
 		codingStartDate: "2020-01-01", // When you started coding
 		professionalStartDate: "2024-01-01", // When you started working on production apps
 		availableForFreelance: true,
 	},
+	blog: {
+		// Hashnode publication host. Posts are pulled from the public Hashnode
+		// GraphQL API and rendered on-domain at /blog and /blog/[slug].
+		hashnodeHost: "sahaniindrajit.hashnode.dev",
+	},
 	navigation: [
 		{ path: "/", name: "Home" },
 		{ path: "/projects", name: "Projects" },
+		{ path: "/blog", name: "Blog" },
 		{ path: "/resume", name: "Resume" },
 		{ path: "/contact", name: "Contact" },
 	],

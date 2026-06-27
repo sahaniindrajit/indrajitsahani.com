@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import {
+	EnvelopeSimple,
+	LinkedinLogo,
+	XLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
+import type { Metadata } from "next";
 import Separator from "../components/separator";
-import { EnvelopeSimple, XLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { config } from "../config/config";
 
 export const metadata: Metadata = {
@@ -37,11 +41,42 @@ export const metadata: Metadata = {
 	},
 };
 
+const faqs = [
+	{
+		question: "Is Indrajit available for freelance or contract work?",
+		answer:
+			"Yes. Indrajit is open to remote roles, freelance projects, and collaborations, especially with early-stage teams shipping fast.",
+	},
+	{
+		question: "What does Indrajit specialize in?",
+		answer:
+			"Product-minded full-stack development with React, Next.js, TypeScript, Node.js, Go, PostgreSQL, and Redis — taking products from idea to launch.",
+	},
+	{
+		question: "What is the best way to get in touch?",
+		answer:
+			"The fastest way to reach Indrajit is a DM on X (@sahani_indrajit) or an email. He typically responds within a day.",
+	},
+];
+
 export default function ContactPage() {
 	const breadcrumbJsonLd = generateBreadcrumbJsonLd([
 		{ name: "Home", url: "https://indrajitsahani.com" },
 		{ name: "Contact", url: "https://indrajitsahani.com/contact" },
 	]);
+
+	const faqJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: faqs.map((faq) => ({
+			"@type": "Question",
+			name: faq.question,
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: faq.answer,
+			},
+		})),
+	};
 
 	return (
 		<section>
@@ -51,18 +86,27 @@ export default function ContactPage() {
 					__html: JSON.stringify(breadcrumbJsonLd),
 				}}
 			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(faqJsonLd),
+				}}
+			/>
 			<h1 className='font-medium text-2xl mb-6 tracking-tight font-["monospace"]'>
 				Let's build something 📧
 			</h1>
 			<p className="sr-only">
-				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to remote roles, freelance work, and collaborations, especially with early-stage teams shipping fast. Reach out via email or a direct message on X.
+				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to
+				remote roles, freelance work, and collaborations, especially with
+				early-stage teams shipping fast. Reach out via email or a direct message
+				on X.
 			</p>
 
 			<div className="prose prose-neutral dark:prose-invert">
 				<p>
-					I'm open to remote roles, freelance work, and collaborations, especially
-					with early-stage teams shipping fast. The fastest way to reach me is a
-					DM on X or an email. I'll get back to you.
+					I'm open to remote roles, freelance work, and collaborations,
+					especially with early-stage teams shipping fast. The fastest way to
+					reach me is a DM on X or an email. I'll get back to you.
 				</p>
 
 				<Separator />
@@ -94,6 +138,22 @@ export default function ContactPage() {
 						<span className="text-sm">Connect on LinkedIn</span>
 					</a>
 				</div>
+
+				<Separator />
+
+				<h2 className="mt-8">FAQ</h2>
+				<dl className="mt-4">
+					{faqs.map((faq) => (
+						<div key={faq.question} className="mb-5">
+							<dt className="font-medium text-neutral-900 dark:text-neutral-100">
+								{faq.question}
+							</dt>
+							<dd className="mt-1 text-neutral-600 dark:text-neutral-400">
+								{faq.answer}
+							</dd>
+						</div>
+					))}
+				</dl>
 			</div>
 		</section>
 	);
