@@ -10,7 +10,7 @@
     "lint": "pnpm biome lint --write ./app"
   },
   "dependencies": {
-    "@next/third-parties": "^14.2.11",
+    "@next/third-parties": "^16.2.9",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.10.0",
@@ -20,9 +20,9 @@
     "autoprefixer": "^10.4.16",
     "date-fns": "^4.1.0",
     "dotenv": "^16.3.1",
-    "geist": "1.1.0",
-    "next": "^14.2.12",
-    "next-mdx-remote": "^4.4.1",
+    "geist": "^1.7.2",
+    "next": "^16.2.9",
+    "next-mdx-remote": "^6.0.0",
     "postcss": "^8.4.31",
     "react": "18.2.0",
     "react-cmdk": "^1.3.9",
