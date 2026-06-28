@@ -2,6 +2,31 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import { highlight } from "sugar-high";
+
+function escapeHtml(text: string): string {
+	return text
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
+}
+
+// Highlight fenced code blocks with sugar-high, which emits spans that read the
+// --sh-* CSS variables already defined in global.css. Works with marked's old
+// (string) and new (token object) renderer signatures.
+marked.use({
+	renderer: {
+		code(token: unknown) {
+			const code =
+				typeof token === "string" ? token : (token as { text: string }).text;
+			try {
+				return `<pre><code>${highlight(code)}</code></pre>`;
+			} catch {
+				return `<pre><code>${escapeHtml(code)}</code></pre>`;
+			}
+		},
+	},
+});
 
 // Posts live as Markdown files in content/blog — author them here directly, or
 // paste in the Markdown of a post you wrote on Hashnode. Rendering from the
@@ -82,8 +107,24 @@ function estimateReadTime(text: string): number {
 	return Math.max(1, Math.round(words / 200));
 }
 
+// Give h2–h4 stable ids and a hover "#" anchor (styled via .prose .anchor in
+// global.css) so readers can deep-link to sections.
+function addHeadingAnchors(html: string): string {
+	return html.replace(/<(h[2-4])>([\s\S]*?)<\/\1>/g, (_match, tag, inner) => {
+		const id = slugify(stripHtml(inner));
+		if (!id) return `<${tag}>${inner}</${tag}>`;
+		return `<${tag} id="${id}"><a href="#${id}" class="anchor" aria-hidden="true"></a>${inner}</${tag}>`;
+	});
+}
+
+function renderMarkdown(markdown: string): string {
+	const html = marked.parse(markdown, { async: false }) as string;
+	return addHeadingAnchors(html);
+}
+
 function parseFile(fileName: string): BlogPost | null {
-	const raw = fs.readFileSync(path.join(POSTS_DIR, fileName), "utf8");
+	const filePath = path.join(POSTS_DIR, fileName);
+	const raw = fs.readFileSync(filePath, "utf8");
 	const { data, content } = matter(raw);
 
 	// Skip drafts explicitly marked as such.
@@ -92,7 +133,7 @@ function parseFile(fileName: string): BlogPost | null {
 	const slug = firstString(data.slug) ?? fileName.replace(/\.mdx?$/, "");
 	const title = firstString(data.title) ?? slug;
 
-	const contentHtml = marked.parse(content, { async: false }) as string;
+	const contentHtml = renderMarkdown(content);
 	const plainText = stripHtml(contentHtml);
 
 	const brief =
@@ -106,9 +147,11 @@ function parseFile(fileName: string): BlogPost | null {
 		data.image,
 	);
 
+	// Fall back to the file's modified time so a post without an explicit date
+	// still sorts and displays sensibly.
 	const publishedAt =
 		toIso(data.date ?? data.datePublished ?? data.publishedAt) ??
-		new Date(0).toISOString();
+		fs.statSync(filePath).mtime.toISOString();
 	const updatedAt = toIso(data.updated ?? data.dateUpdated ?? data.updatedAt);
 
 	return {

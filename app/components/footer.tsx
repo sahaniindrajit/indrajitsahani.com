@@ -41,23 +41,28 @@ const Footer: FC = () => {
 		<footer className="mt-8" aria-label="Footer">
 			<h2 className="sr-only">Connect with Indrajit Sahani on social media</h2>
 			<p className="sr-only">
-				Follow Indrajit Sahani on GitHub, X (Twitter), and LinkedIn, read his blog, or send an email to get in touch about full-stack development roles, freelance work, and collaborations.
+				Follow Indrajit Sahani on GitHub, X (Twitter), and LinkedIn, read his
+				blog, or send an email to get in touch about full-stack development
+				roles, freelance work, and collaborations.
 			</p>
 			<nav aria-label="Social media links" className="flex justify-center">
 				<ul className="flex gap-4">
-					{socialLinks.map((social, index) => (
-					<li key={index}>
-						<a
-							href={social.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label={`${social.name} - Connect with Indrajit Sahani`}
-							className="inline-block p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full"
-						>
-							<social.logo size={24} aria-hidden="true" />
-						</a>
-					</li>
-					))}
+					{socialLinks.map((social, index) => {
+						const isInternal = social.url.startsWith("/");
+						return (
+							<li key={index}>
+								<a
+									href={social.url}
+									target={isInternal ? undefined : "_blank"}
+									rel={isInternal ? undefined : "noopener noreferrer"}
+									aria-label={`${social.name} - Connect with Indrajit Sahani`}
+									className="inline-block p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full"
+								>
+									<social.logo size={24} aria-hidden="true" />
+								</a>
+							</li>
+						);
+					})}
 				</ul>
 			</nav>
 		</footer>

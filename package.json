@@ -10,7 +10,8 @@
     "build-only": "next build",
     "start": "next start",
     "format": "pnpm biome format --write ./app",
-    "lint": "pnpm biome lint --write ./app"
+    "lint": "pnpm biome lint --write ./app",
+    "new:post": "node scripts/new-post.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.9",

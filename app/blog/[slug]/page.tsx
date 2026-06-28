@@ -149,6 +149,15 @@ export default async function BlogPostPage({
 				</div>
 			)}
 
+			{post.coverImage && (
+				// eslint-disable-next-line @next/next/no-img-element
+				<img
+					src={post.coverImage}
+					alt={post.title}
+					className="mt-6 w-full rounded-lg border border-neutral-200 dark:border-neutral-800"
+				/>
+			)}
+
 			<Separator />
 
 			<article

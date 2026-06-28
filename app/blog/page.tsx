@@ -46,9 +46,6 @@ export const metadata: Metadata = {
 	},
 };
 
-// Revalidate the list page hourly so newly published Hashnode posts appear.
-export const revalidate = 3600;
-
 export default async function BlogPage() {
 	const posts = await getBlogPosts();
 
@@ -103,16 +100,7 @@ export default async function BlogPage() {
 
 			{posts.length === 0 ? (
 				<p className="mt-6 text-neutral-600 dark:text-neutral-400">
-					No posts yet. Check back soon, or read along on{" "}
-					<a
-						href="https://sahaniindrajit.hashnode.dev/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="underline"
-					>
-						Hashnode
-					</a>
-					.
+					No posts yet — writing in progress. Check back soon.
 				</p>
 			) : (
 				<ul className="mt-6 flex flex-col gap-6">
