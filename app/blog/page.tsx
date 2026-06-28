@@ -2,7 +2,7 @@ import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Separator from "../components/separator";
-import { getBlogPosts } from "../lib/hashnode";
+import { getBlogPosts } from "../lib/posts";
 import formatDate from "../utils/formatDate";
 
 const SITE_URL = "https://indrajitsahani.com";
@@ -45,9 +45,6 @@ export const metadata: Metadata = {
 		site: "@sahani_indrajit",
 	},
 };
-
-// Revalidate the list page hourly so newly published Hashnode posts appear.
-export const revalidate = 3600;
 
 export default async function BlogPage() {
 	const posts = await getBlogPosts();
@@ -103,16 +100,7 @@ export default async function BlogPage() {
 
 			{posts.length === 0 ? (
 				<p className="mt-6 text-neutral-600 dark:text-neutral-400">
-					No posts yet. Check back soon, or read along on{" "}
-					<a
-						href="https://sahaniindrajit.hashnode.dev/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="underline"
-					>
-						Hashnode
-					</a>
-					.
+					No posts yet — writing in progress. Check back soon.
 				</p>
 			) : (
 				<ul className="mt-6 flex flex-col gap-6">

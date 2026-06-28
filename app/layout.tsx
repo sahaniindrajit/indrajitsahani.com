@@ -74,9 +74,6 @@ export default function RootLayout({
 			)}
 		>
 			<head>
-				{/* Blog content images are served from Hashnode's CDN. */}
-				<link rel="preconnect" href="https://cdn.hashnode.com" />
-				<link rel="dns-prefetch" href="https://cdn.hashnode.com" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
@@ -95,7 +92,6 @@ export default function RootLayout({
 									"https://github.com/sahaniindrajit",
 									"https://x.com/sahani_indrajit",
 									"https://www.linkedin.com/in/indrajitsahani/",
-									"https://sahaniindrajit.hashnode.dev/",
 								],
 							},
 						}),

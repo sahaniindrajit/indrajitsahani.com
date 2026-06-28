@@ -80,7 +80,6 @@ export default function Page() {
 			config.socials.github,
 			config.socials.twitter,
 			config.socials.linkedin,
-			config.socials.blog,
 		],
 		knowsAbout: [
 			"Full Stack Development",
@@ -242,15 +241,13 @@ export default function Page() {
 						</a>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-							rel="noopener noreferrer"
-							target="_blank"
-							href={config.socials.blog}
+							href="/blog"
 						>
 							<ArrowIcon />
 							<p className="h-7 ml-2">Read my blog</p>
-						</a>
+						</Link>
 					</li>
 				</ul>
 

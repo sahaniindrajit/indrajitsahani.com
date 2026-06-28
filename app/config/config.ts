@@ -6,11 +6,6 @@ export const config = {
 		professionalStartDate: "2024-01-01", // When you started working on production apps
 		availableForFreelance: true,
 	},
-	blog: {
-		// Hashnode publication host. Posts are pulled from the public Hashnode
-		// GraphQL API and rendered on-domain at /blog and /blog/[slug].
-		hashnodeHost: "sahaniindrajit.hashnode.dev",
-	},
 	navigation: [
 		{ path: "/", name: "Home" },
 		{ path: "/projects", name: "Projects" },
@@ -40,6 +35,7 @@ export const config = {
 		github: "https://github.com/sahaniindrajit",
 		twitter: "https://x.com/sahani_indrajit",
 		linkedin: "https://www.linkedin.com/in/indrajitsahani/",
-		blog: "https://sahaniindrajit.hashnode.dev/",
+		// The blog now lives on-domain at /blog (no external host).
+		blog: "/blog",
 	},
 };

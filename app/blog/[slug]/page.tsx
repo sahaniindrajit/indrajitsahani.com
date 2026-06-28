@@ -3,15 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Separator from "../../components/separator";
-import { getBlogPost, getBlogPosts } from "../../lib/hashnode";
+import { getBlogPost, getBlogPosts } from "../../lib/posts";
 import formatDate from "../../utils/formatDate";
 
 const SITE_URL = "https://indrajitsahani.com";
 
-// Revalidate posts hourly; pre-render the known slugs at build time.
-export const revalidate = 3600;
-// Allow on-demand rendering of posts published after the last build.
-export const dynamicParams = true;
+// Posts are local Markdown, so every slug is known at build time.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
 	const posts = await getBlogPosts();
@@ -151,29 +149,41 @@ export default async function BlogPostPage({
 				</div>
 			)}
 
+			{post.coverImage && (
+				// eslint-disable-next-line @next/next/no-img-element
+				<img
+					src={post.coverImage}
+					alt={post.title}
+					className="mt-6 w-full rounded-lg border border-neutral-200 dark:border-neutral-800"
+				/>
+			)}
+
 			<Separator />
 
 			<article
 				className="prose prose-neutral dark:prose-invert max-w-none mt-6"
-				// Content is authored by the site owner on Hashnode and returned as
-				// sanitized HTML by the Hashnode API.
+				// Content is authored by the site owner (Markdown in content/blog,
+				// rendered to HTML at build time), so it is trusted.
 				dangerouslySetInnerHTML={{ __html: post.contentHtml }}
 			/>
 
-			<Separator />
-
-			<p className="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
-				Originally published on{" "}
-				<a
-					href={post.url}
-					target="_blank"
-					rel="noopener noreferrer"
-					className="underline"
-				>
-					Hashnode
-				</a>
-				.
-			</p>
+			{post.originalUrl && (
+				<>
+					<Separator />
+					<p className="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+						Originally published on{" "}
+						<a
+							href={post.originalUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="underline"
+						>
+							Hashnode
+						</a>
+						.
+					</p>
+				</>
+			)}
 		</section>
 	);
 }
