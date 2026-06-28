@@ -57,6 +57,19 @@ async function hashnodeFetch<T>(
 			return null;
 		}
 
+		// A non-JSON body means the request never reached Hashnode — almost
+		// always an egress proxy / firewall serving an HTML block page. Surface
+		// that clearly instead of letting JSON.parse throw an opaque SyntaxError.
+		const contentType = res.headers.get("content-type") ?? "";
+		if (!contentType.includes("application/json")) {
+			const preview = (await res.text()).slice(0, 120);
+			console.error(
+				`Hashnode API returned non-JSON (content-type: "${contentType}"). ` +
+					`The host may be blocked by a network policy. Body starts with: ${preview}`
+			);
+			return null;
+		}
+
 		const json = (await res.json()) as GraphQLResponse<T>;
 		if (json.errors?.length) {
 			console.error("Hashnode API errors:", json.errors);
