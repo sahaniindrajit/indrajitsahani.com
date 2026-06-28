@@ -3,10 +3,10 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-// Posts live as Markdown files in content/blog. They are written there by
-// Hashnode's GitHub backup (each published article is committed as Markdown),
-// or you can author them by hand. Rendering from the repo means no runtime
-// fetch, no API token, and no bot-challenge — the blog is fully on-domain.
+// Posts live as Markdown files in content/blog — author them here directly, or
+// paste in the Markdown of a post you wrote on Hashnode. Rendering from the
+// repo means no runtime fetch, no API token, and no bot-challenge; the blog is
+// fully on-domain and free.
 const POSTS_DIR = path.join(process.cwd(), "content", "blog");
 
 export type BlogTag = {
