@@ -61,11 +61,11 @@ export function Navbar() {
 		<aside className="-ml-[8px] mb-8 tracking-tight no-print">
 			<div className="lg:sticky lg:top-20">
 				<nav
-					className="flex flex-col sm:flex-row relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative gap-3 sm:gap-0 sm:items-center sm:justify-between"
+					className="flex flex-row flex-wrap items-center gap-x-2 gap-y-2 relative px-0 pb-0 fade scroll-pr-6"
 					id="nav"
 					aria-label="Main navigation"
 				>
-					<div className="flex flex-row flex-wrap space-x-0">
+					<div className="flex flex-row flex-wrap items-center space-x-0">
 					{config.navigation.map(({ path, name }) => {
 						const isActive = currentRoute === path;
 						return (
@@ -80,7 +80,7 @@ export function Navbar() {
 						);
 					})}
 					</div>
-					<div className="flex items-center gap-3 flex-wrap">
+					<div className="flex items-center gap-2 ml-auto">
 						<ISTClock />
 						{currentRoute === "/resume" && (
 							<Chip

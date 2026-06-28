@@ -30,6 +30,7 @@ const WorkExperienceItem: FC<WorkExperienceItemProps> = ({ job }) => {
 					width={20}
 					height={20}
 					className="mr-4"
+					unoptimized
 				/>
 				<a
 					target="_blank"
