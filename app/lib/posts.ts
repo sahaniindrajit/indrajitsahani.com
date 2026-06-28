@@ -145,11 +145,25 @@ function normalizeImages(markdown: string): string {
 	);
 }
 
+// The page already renders the post title as the only <h1>. Some posts (e.g.
+// pasted from Hashnode) use "#" for their section headings, which would add
+// more <h1>s. If the body contains any <h1>, demote every heading one level so
+// the document keeps a single, correct heading hierarchy.
+function demoteHeadingsIfH1(html: string): string {
+	if (!/<h1[\s>]/i.test(html)) return html;
+	return html
+		.replace(/<(\/?)h5([\s>])/gi, "<$1h6$2")
+		.replace(/<(\/?)h4([\s>])/gi, "<$1h5$2")
+		.replace(/<(\/?)h3([\s>])/gi, "<$1h4$2")
+		.replace(/<(\/?)h2([\s>])/gi, "<$1h3$2")
+		.replace(/<(\/?)h1([\s>])/gi, "<$1h2$2");
+}
+
 function renderMarkdown(markdown: string): string {
 	const html = marked.parse(normalizeImages(markdown), {
 		async: false,
 	}) as string;
-	return addHeadingAnchors(html);
+	return addHeadingAnchors(demoteHeadingsIfH1(html));
 }
 
 function parseFile(fileName: string): BlogPost | null {

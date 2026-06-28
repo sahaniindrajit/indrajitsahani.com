@@ -2,8 +2,8 @@
 title: "Beginner's guide to React Router"
 slug: "beginner-s-guide-to-react-router"
 date: "2024-07-21"
-excerpt: ""
-tags: []
+excerpt: "A beginner-friendly introduction to client-side routing in React with React Router — BrowserRouter, Routes, Route, and useNavigate — with full example code."
+tags: ["react", "react-router", "javascript", "frontend", "web-development", "spa"]
 cover: "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/UYsBCu9RP3Y/upload/68e48ecc8264002259f00933570169f3.jpeg"
 ---
 ## what is React Router

@@ -2,9 +2,9 @@
 title: "Understanding Database transactions"
 slug: "understanding-database-transactions"
 date: "2024-08-03"
-excerpt: ""
-tags: []
-cover: "https://sahaniindrajit.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1722616568675%2Fbb9772b1-54a9-44f0-8fc8-22939aec5720.png&w=3840&q=75"
+excerpt: "What database transactions are, why they matter, and how the ACID properties — Atomicity, Consistency, Isolation, and Durability — keep your data reliable under concurrent load."
+tags: ["database", "dbms", "transactions", "acid", "sql", "backend"]
+cover: "https://cdn.hashnode.com/res/hashnode/image/upload/v1722616568675/bb9772b1-54a9-44f0-8fc8-22939aec5720.png"
 
 ---
 
