@@ -1,10 +1,10 @@
-import Link from "next/link";
-import Image from "next/image";
-import Badge from "./components/Badge";
-import ArrowIcon from "./components/ArrowIcon";
 import type { Metadata } from "next";
-import Separator from "./components/separator";
+import Image from "next/image";
+import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";
+import ArrowIcon from "./components/ArrowIcon";
+import Badge from "./components/Badge";
+import Separator from "./components/separator";
 import { config } from "./config/config";
 
 export const metadata: Metadata = {
@@ -56,6 +56,8 @@ export default function Page() {
 		url: "https://indrajitsahani.com",
 		image: "https://indrajitsahani.com/indrajit.png",
 		jobTitle: "Full-Stack Developer",
+		email: `mailto:${config.socials.email}`,
+		nationality: "Indian",
 		worksFor: [
 			{
 				"@type": "Organization",
@@ -63,10 +65,22 @@ export default function Page() {
 				url: config.companies.enrichLabs,
 			},
 		],
+		hasOccupation: {
+			"@type": "Occupation",
+			name: "Full-Stack Developer",
+			skills:
+				"React, Next.js, TypeScript, Node.js, Go, PostgreSQL, Redis, Web Development",
+		},
+		alumniOf: {
+			"@type": "CollegeOrUniversity",
+			name: "Guru Gobind Singh Indraprastha University",
+			url: config.education.ipu,
+		},
 		sameAs: [
 			config.socials.github,
 			config.socials.twitter,
 			config.socials.linkedin,
+			config.socials.blog,
 		],
 		knowsAbout: [
 			"Full Stack Development",
@@ -75,6 +89,8 @@ export default function Page() {
 			"TypeScript",
 			"Node.js",
 			"Go",
+			"PostgreSQL",
+			"Redis",
 			"Web Development",
 		],
 		address: {
@@ -90,7 +106,12 @@ export default function Page() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
 			<p className="sr-only">
-				Indrajit Sahani is a product-minded full-stack developer who builds real products teams depend on. He specializes in React, Next.js, TypeScript, Node.js, Go, PostgreSQL, and Redis. Currently building Sendkit, a cold email platform, at Enrich Labs, and previously built Linkbird, a LinkedIn automation platform. He is open to remote roles, freelance work, and collaborations.
+				Indrajit Sahani is a product-minded full-stack developer who builds real
+				products teams depend on. He specializes in React, Next.js, TypeScript,
+				Node.js, Go, PostgreSQL, and Redis. Currently building Sendkit, a cold
+				email platform, at Enrich Labs, and previously built Linkbird, a
+				LinkedIn automation platform. He is open to remote roles, freelance
+				work, and collaborations.
 			</p>
 			<header className="mb-6">
 				<div className="flex items-center gap-4 mb-4">
@@ -177,9 +198,9 @@ export default function Page() {
 				<h2>How I Work</h2>
 				<p>
 					I care about <em>why</em> something gets built and whether it actually
-					helps the people using it, not just whether the code runs. I've shipped
-					real products that teams depend on, taking them from idea to launch and
-					sharpening them based on how people actually use them.
+					helps the people using it, not just whether the code runs. I've
+					shipped real products that teams depend on, taking them from idea to
+					launch and sharpening them based on how people actually use them.
 				</p>
 				<p>
 					I do my best work in small, fast-moving teams where I can own what I
@@ -193,7 +214,9 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>GitHub Contributions</h2>
 				<p className="sr-only">
-					Indrajit Sahani's GitHub contribution graph showing daily open-source coding activity on React, Next.js, TypeScript, Node.js, and Go projects as sahaniindrajit.
+					Indrajit Sahani's GitHub contribution graph showing daily open-source
+					coding activity on React, Next.js, TypeScript, Node.js, and Go
+					projects as sahaniindrajit.
 				</p>
 				<GitHubCalendar username="sahaniindrajit" />
 			</div>
@@ -242,7 +265,10 @@ export default function Page() {
 							<span className="mr-2 text-neutral-600">📧</span>
 							{config.socials.email}
 						</p>
-						<span className="sr-only">Send an email to Indrajit Sahani for freelance inquiries or collaboration</span>
+						<span className="sr-only">
+							Send an email to Indrajit Sahani for freelance inquiries or
+							collaboration
+						</span>
 					</a>
 				</div>
 			</nav>

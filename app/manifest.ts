@@ -9,8 +9,10 @@ export default function manifest(): MetadataRoute.Manifest {
 		start_url: "/",
 		id: "com.indrajitsahani",
 		display: "standalone",
+		// Match the site's default (light) chrome so the installed PWA's
+		// surfaces don't flash a mismatched black bar against the white UI.
 		background_color: "#ffffff",
-		theme_color: "#000000",
+		theme_color: "#ffffff",
 		icons: [
 			{
 				src: "/logo.png",

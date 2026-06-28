@@ -1,13 +1,13 @@
 import "./global.css";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
+import { Navbar } from "./components/nav";
 
-import { PreloadResources } from "./preload";
 import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
+import { PreloadResources } from "./preload";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -17,6 +17,16 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Indrajit Sahani is a product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+	alternates: {
+		types: {
+			"application/rss+xml": "https://indrajitsahani.com/feed.xml",
+		},
+	},
+	// Set GOOGLE_SITE_VERIFICATION in the environment to verify the domain in
+	// Google Search Console (renders <meta name="google-site-verification">).
+	verification: process.env.GOOGLE_SITE_VERIFICATION
+		? { google: process.env.GOOGLE_SITE_VERIFICATION }
+		: undefined,
 	openGraph: {
 		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
@@ -60,10 +70,13 @@ export default function RootLayout({
 			className={cx(
 				"text-black bg-white dark:text-white dark:bg-[#111010]",
 				GeistSans.variable,
-				GeistMono.variable
+				GeistMono.variable,
 			)}
 		>
 			<head>
+				{/* Blog content images are served from Hashnode's CDN. */}
+				<link rel="preconnect" href="https://cdn.hashnode.com" />
+				<link rel="dns-prefetch" href="https://cdn.hashnode.com" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
@@ -78,6 +91,12 @@ export default function RootLayout({
 								"@type": "Person",
 								name: "Indrajit Sahani",
 								url: "https://indrajitsahani.com",
+								sameAs: [
+									"https://github.com/sahaniindrajit",
+									"https://x.com/sahani_indrajit",
+									"https://www.linkedin.com/in/indrajitsahani/",
+									"https://sahaniindrajit.hashnode.dev/",
+								],
 							},
 						}),
 					}}

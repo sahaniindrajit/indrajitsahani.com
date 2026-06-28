@@ -1,7 +1,9 @@
-export default async function sitemap() {
-	const baseUrl = "https://indrajitsahani.com";
+import { getBlogPosts } from "./lib/hashnode";
 
-	const routes = [
+const baseUrl = "https://indrajitsahani.com";
+
+export default async function sitemap() {
+	const staticRoutes = [
 		{
 			url: baseUrl,
 			lastModified: new Date().toISOString(),
@@ -12,6 +14,12 @@ export default async function sitemap() {
 			url: `${baseUrl}/projects`,
 			lastModified: new Date().toISOString(),
 			changeFrequency: "monthly" as const,
+			priority: 0.8,
+		},
+		{
+			url: `${baseUrl}/blog`,
+			lastModified: new Date().toISOString(),
+			changeFrequency: "weekly" as const,
 			priority: 0.8,
 		},
 		{
@@ -28,5 +36,14 @@ export default async function sitemap() {
 		},
 	];
 
-	return routes;
+	// Pull published blog posts so each gets its own indexable sitemap entry.
+	const posts = await getBlogPosts();
+	const blogRoutes = posts.map((post) => ({
+		url: `${baseUrl}/blog/${post.slug}`,
+		lastModified: new Date(post.updatedAt ?? post.publishedAt).toISOString(),
+		changeFrequency: "monthly" as const,
+		priority: 0.7,
+	}));
+
+	return [...staticRoutes, ...blogRoutes];
 }
