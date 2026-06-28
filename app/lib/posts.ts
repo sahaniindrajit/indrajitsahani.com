@@ -117,8 +117,38 @@ function addHeadingAnchors(html: string): string {
 	});
 }
 
+// Hashnode wraps image URLs in its Next.js optimizer
+// (https://<host>/_next/image?url=<encoded>&w=..&q=..). That endpoint sits on
+// the bot-challenged hashnode.dev domain, so unwrap it to the direct CDN URL.
+function unwrapNextImage(url: string): string {
+	const match = url.match(/\/_next\/image\?url=([^&]+)/);
+	if (!match) return url;
+	try {
+		return decodeURIComponent(match[1]);
+	} catch {
+		return url;
+	}
+}
+
+// Normalize Hashnode-flavored image Markdown: strip the non-standard
+// ` align="..."` suffix Hashnode adds inside the parentheses, and unwrap
+// optimizer URLs. Without this, marked treats ` align="left"` as part of the
+// src and the image fails to load.
+function normalizeImages(markdown: string): string {
+	return markdown.replace(
+		/!\[([^\]]*)\]\(([^)]+)\)/g,
+		(_match, alt, destination) => {
+			let url = destination.trim().replace(/\s+align=(["']).*?\1\s*$/i, "");
+			url = unwrapNextImage(url.trim());
+			return `![${alt}](${url})`;
+		},
+	);
+}
+
 function renderMarkdown(markdown: string): string {
-	const html = marked.parse(markdown, { async: false }) as string;
+	const html = marked.parse(normalizeImages(markdown), {
+		async: false,
+	}) as string;
 	return addHeadingAnchors(html);
 }
 
@@ -140,12 +170,13 @@ function parseFile(fileName: string): BlogPost | null {
 		firstString(data.excerpt, data.seoDescription, data.subtitle, data.brief) ??
 		plainText.slice(0, 200);
 
-	const coverImage = firstString(
+	const rawCover = firstString(
 		data.cover,
 		data.coverImage,
 		data.ogImage,
 		data.image,
 	);
+	const coverImage = rawCover ? unwrapNextImage(rawCover) : null;
 
 	// Fall back to the file's modified time so a post without an explicit date
 	// still sorts and displays sensibly.
