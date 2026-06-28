@@ -1,4 +1,4 @@
-import { getBlogPosts } from "./lib/hashnode";
+import { getBlogPosts } from "./lib/posts";
 
 const baseUrl = "https://indrajitsahani.com";
 

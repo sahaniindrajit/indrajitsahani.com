@@ -2,7 +2,7 @@ import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Separator from "../components/separator";
-import { getBlogPosts } from "../lib/hashnode";
+import { getBlogPosts } from "../lib/posts";
 import formatDate from "../utils/formatDate";
 
 const SITE_URL = "https://indrajitsahani.com";
