@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Projects",
 	description:
-		"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
+		"Projects by Indrajit Sahani: Sendkit CLI, SketchSync, PDF-Talk, NotionLeager, and more. Built with TypeScript, Next.js, Node.js, Go & AI.",
 	keywords: [
 		"Indrajit Sahani Projects",
 		"Web Development Projects",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
-			"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
+			"Projects by Indrajit Sahani: Sendkit CLI, SketchSync, PDF-Talk, NotionLeager, and more. Built with TypeScript, Next.js, Node.js, Go & AI.",
 		url: "https://indrajitsahani.com/projects",
 		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
@@ -33,13 +33,22 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
-			"Projects by Indrajit Sahani: SketchSync, PDF-Talk, Rezumi, and more. Full-stack web apps built with React, Next.js, Node.js, Go & AI.",
+			"Projects by Indrajit Sahani: Sendkit CLI, SketchSync, PDF-Talk, NotionLeager, and more. Built with TypeScript, Next.js, Node.js, Go & AI.",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
 	},
 };
 
 const projectsData = [
+	{
+		project: "Sendkit CLI",
+		description:
+			"The official command-line client for Sendkit, which I co-maintain. Lets users and AI agents manage campaigns, mailboxes, and leads straight from the terminal. Published on npm as @sendkit-ai/cli.",
+		technologies: ["TypeScript", "Node.js", "CLI", "REST API"],
+		website: "https://www.npmjs.com/package/@sendkit-ai/cli",
+		category: "Developer Tools",
+		workType: "Work",
+	},
 	{
 		project: "SketchSync",
 		description:
