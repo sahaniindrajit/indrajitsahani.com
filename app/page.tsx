@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Indrajit Sahani - Full-Stack Developer",
 	description:
-		"Indrajit Sahani is a product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+		"Indrajit Sahani is a full-stack developer who owns Sendkit end to end at Enrich Labs: product engineering, infrastructure, observability, email deliverability, and AI tooling.",
 	keywords: [
 		"Indrajit Sahani",
 		"Full Stack Developer",
@@ -24,7 +24,9 @@ export const metadata: Metadata = {
 		"Software Engineer",
 		"Sendkit",
 		"Enrich Labs",
-		"Remote Developer",
+		"Infrastructure",
+		"Observability",
+		"Email Deliverability",
 		"Portfolio",
 	],
 	alternates: {
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
-			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		url: "https://indrajitsahani.com",
 		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
-			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
+			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
 	},
@@ -69,7 +71,7 @@ export default function Page() {
 			"@type": "Occupation",
 			name: "Full-Stack Developer",
 			skills:
-				"React, Next.js, TypeScript, Node.js, Go, PostgreSQL, Redis, Web Development",
+				"React, Next.js, TypeScript, Node.js, Go, MongoDB, PostgreSQL, Redis, Docker, OpenTelemetry, Web Development",
 		},
 		alumniOf: {
 			"@type": "CollegeOrUniversity",
@@ -90,6 +92,10 @@ export default function Page() {
 			"Go",
 			"PostgreSQL",
 			"Redis",
+			"Docker",
+			"OpenTelemetry",
+			"Observability",
+			"Email Deliverability",
 			"Web Development",
 		],
 		address: {
@@ -105,12 +111,12 @@ export default function Page() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
 			<p className="sr-only">
-				Indrajit Sahani is a product-minded full-stack developer who builds real
-				products teams depend on. He specializes in React, Next.js, TypeScript,
-				Node.js, Go, PostgreSQL, and Redis. Currently building Sendkit, a cold
-				email platform, at Enrich Labs, and previously built Linkbird, a
-				LinkedIn automation platform. He is open to remote roles, freelance
-				work, and collaborations.
+				Indrajit Sahani is a full-stack developer who builds and runs production
+				systems. He owns Sendkit, a cold email platform, end to end at Enrich
+				Labs: product engineering, infrastructure, observability, email
+				deliverability, and AI integrations. He works with React, Next.js,
+				TypeScript, Node.js, Go, MongoDB, PostgreSQL, and Redis, and previously
+				built Linkbird, a LinkedIn automation platform.
 			</p>
 			<header className="mb-6">
 				<div className="flex items-center gap-4 mb-4">
@@ -164,11 +170,13 @@ export default function Page() {
 							Enrich Labs
 						</Badge>
 					</span>
-					, where I'm building <strong>Sendkit</strong>, a cold email platform
-					for agencies and GTM teams. I build the integrations that let users
-					connect their existing tools, the migration modules that make
-					switching platforms painless, and turn customer feedback directly into
-					product improvements.
+					, where I own <strong>Sendkit</strong>, a cold email platform for
+					agencies and GTM teams, end to end. That means the engineering across
+					product, backend, and infrastructure, and working with the team on how
+					everything should be built and shipped. Lately that's been production
+					monitoring across all our servers, the CLI and MCP integrations that let
+					users and AI agents drive Sendkit, email deliverability, and keeping
+					things fast as we scale.
 				</p>
 				<p>
 					Before this, I led the build of{" "}
@@ -263,8 +271,7 @@ export default function Page() {
 							{config.socials.email}
 						</p>
 						<span className="sr-only">
-							Send an email to Indrajit Sahani for freelance inquiries or
-							collaboration
+							Send an email to Indrajit Sahani
 						</span>
 					</a>
 				</div>

@@ -4,7 +4,7 @@ export const config = {
 		jobTitle: "Full-Stack Developer",
 		codingStartDate: "2020-01-01", // When you started coding
 		professionalStartDate: "2024-01-01", // When you started working on production apps
-		availableForFreelance: true,
+		availableForFreelance: false,
 	},
 	navigation: [
 		{ path: "/", name: "Home" },

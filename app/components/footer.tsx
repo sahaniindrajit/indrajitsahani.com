@@ -42,8 +42,7 @@ const Footer: FC = () => {
 			<h2 className="sr-only">Connect with Indrajit Sahani on social media</h2>
 			<p className="sr-only">
 				Follow Indrajit Sahani on GitHub, X (Twitter), and LinkedIn, read his
-				blog, or send an email to get in touch about full-stack development
-				roles, freelance work, and collaborations.
+				blog, or send an email to get in touch.
 			</p>
 			<nav aria-label="Social media links" className="flex justify-center">
 				<ul className="flex gap-4">

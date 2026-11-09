@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Resume",
 	description:
-		"Indrajit Sahani's resume: Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
+		"Indrajit Sahani's resume: Full-Stack Developer owning Sendkit end to end at Enrich Labs. Experienced in TypeScript, Node.js, Go, MongoDB, Redis, Docker & OpenTelemetry.",
 	keywords: [
 		"Indrajit Sahani Resume",
 		"Full Stack Developer Resume",
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 		"React Developer Resume",
 		"Software Engineer Resume",
 		"Work Experience",
-		"Hire Developer",
 		"TypeScript Developer Resume",
 	],
 	alternates: {
@@ -29,13 +28,13 @@ export const metadata: Metadata = {
 		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
 		siteName: "Indrajit Sahani's Portfolio",
 		description:
-			"Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
+			"Full-Stack Developer owning Sendkit end to end at Enrich Labs. Experienced in TypeScript, Node.js, Go, MongoDB, Redis, Docker & OpenTelemetry.",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
 		description:
-			"Full-Stack Developer building Sendkit at Enrich Labs. Experienced in React, Next.js, TypeScript, Node.js, Go & PostgreSQL.",
+			"Full-Stack Developer owning Sendkit end to end at Enrich Labs. Experienced in TypeScript, Node.js, Go, MongoDB, Redis, Docker & OpenTelemetry.",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
 	},
@@ -48,15 +47,19 @@ const toolkit = [
 	},
 	{
 		area: "Backend",
-		tools: ["Node.js", "Hono", "Express", "REST APIs", "WebSocket", "Go"],
+		tools: ["Node.js", "Go", "Hono", "Express", "REST APIs", "WebSocket"],
 	},
 	{
 		area: "Data & Infra",
-		tools: ["MongoDB", "PostgreSQL", "Prisma", "Redis", "Docker", "Hetzner", "Dokploy", "Vercel"],
+		tools: ["MongoDB", "PostgreSQL", "Prisma", "Redis", "Docker", "Linux", "Hetzner", "DigitalOcean", "Dokploy", "Vercel"],
 	},
 	{
-		area: "AI / ML",
-		tools: ["Langchain", "Pinecone", "Hugging Face", "RAG pipelines"],
+		area: "Observability",
+		tools: ["OpenTelemetry", "Grafana", "SigNoz"],
+	},
+	{
+		area: "AI & Automation",
+		tools: ["MCP", "AI Agents", "Langchain", "Pinecone", "Hugging Face", "RAG pipelines", "Playwright"],
 	},
 ];
 
@@ -76,15 +79,19 @@ const resumeData = {
 						"TypeScript",
 						"Next.js",
 						"Node.js",
-						"PostgreSQL",
-						"Prisma",
+						"MongoDB",
 						"Redis",
+						"Docker",
+						"OpenTelemetry",
 					],
 					responsibilities: [
-						"Building Sendkit, a cold email platform for agencies and GTM teams.",
-						"Built integrations that let users connect their existing tools and work across them seamlessly inside Sendkit, instead of stitching together disconnected apps.",
-						"Built migration modules so customers can bring their data over from other sequencers with almost no friction, removing one of the biggest reasons teams hesitate to switch platforms.",
-						"Turn customer feedback into concrete product improvements, and work directly with customers to debug issues and guide them through the problems they run into.",
+						"Own Sendkit, a cold email platform for agencies and GTM teams, end to end: engineering across product, backend, and infrastructure, plus coordinating with the team on how features and systems should work.",
+						"Built monitoring and observability across all production servers and services.",
+						"Shipped the Sendkit CLI and MCP integrations, letting users and AI agents manage campaigns, mailboxes, and leads directly.",
+						"Drive email deliverability work: diagnosing bounces, mail provider blocks, and sender reputation issues.",
+						"Lead scalability and performance work as usage grows, including infrastructure moves and code optimisation.",
+						"Built integrations with users' existing tools and migration modules that let customers move over from other sequencers with almost no friction.",
+						"Turn customer feedback into product improvements and work directly with customers to debug issues.",
 					],
 				},
 			],
@@ -122,7 +129,7 @@ const resumeData = {
 			institution: "Guru Gobind Singh Indraprastha University (IPU)",
 			logo: "https://www.google.com/s2/favicons?domain=ipu.ac.in&sz=128",
 			degree: "Bachelor of Technology (B.Tech), Information Technology",
-			period: "2022 - 2026",
+			period: "2023 - 2027",
 			location: "Delhi, India",
 		},
 	],
@@ -164,6 +171,9 @@ export default function WorkPage() {
 				"PostgreSQL",
 				"Redis",
 				"Docker",
+				"OpenTelemetry",
+				"Observability",
+				"Email Deliverability",
 			],
 		},
 	};
@@ -188,7 +198,7 @@ export default function WorkPage() {
 				</h1>
 			</div>
 			<p className="sr-only">
-				Professional resume of Indrajit Sahani, a product-minded Full-Stack Developer. Currently building Sendkit, a cold email platform, at Enrich Labs. Previously built Linkbird, a LinkedIn automation platform, from the ground up. Experienced in React, Next.js, TypeScript, Node.js, Go, PostgreSQL, Redis, and Docker. Holds a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University, Delhi.
+				Professional resume of Indrajit Sahani, a product-minded Full-Stack Developer. Owns Sendkit, a cold email platform, end to end at Enrich Labs, across product engineering, infrastructure, observability, email deliverability, and AI integrations. Previously built Linkbird, a LinkedIn automation platform, from the ground up. Experienced in React, Next.js, TypeScript, Node.js, Go, MongoDB, PostgreSQL, Redis, Docker, and OpenTelemetry. Pursuing a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University, Delhi.
 			</p>
 
 			{/* Traditional PDF résumé */}

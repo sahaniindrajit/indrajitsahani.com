@@ -12,30 +12,28 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: "Contact",
 	description:
-		"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
+		"Get in touch with Indrajit Sahani, full-stack developer building Sendkit at Enrich Labs. Reach out via email, a DM on X, or LinkedIn.",
 	keywords: [
 		"Contact Indrajit Sahani",
-		"Hire Full Stack Developer",
-		"Freelance Developer",
-		"Remote Developer",
-		"Web Developer for Hire",
+		"Indrajit Sahani Email",
+		"Full Stack Developer",
 	],
 	alternates: {
 		canonical: "/contact",
 	},
 	openGraph: {
-		title: "Contact Indrajit Sahani - Hire a Full-Stack Developer",
+		title: "Contact Indrajit Sahani",
 		description:
-			"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
+			"Get in touch with Indrajit Sahani, full-stack developer building Sendkit at Enrich Labs. Reach out via email, a DM on X, or LinkedIn.",
 		url: "https://indrajitsahani.com/contact",
 		siteName: "Indrajit Sahani's Portfolio",
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Contact Indrajit Sahani - Hire a Full-Stack Developer",
+		title: "Contact Indrajit Sahani",
 		description:
-			"Get in touch with Indrajit Sahani for remote roles, freelance projects, or collaborations. Reach out via email or a DM on X.",
+			"Get in touch with Indrajit Sahani, full-stack developer building Sendkit at Enrich Labs. Reach out via email, a DM on X, or LinkedIn.",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
 	},
@@ -59,17 +57,17 @@ export default function ContactPage() {
 				Let's build something 📧
 			</h1>
 			<p className="sr-only">
-				Contact Indrajit Sahani, a product-minded Full-Stack Developer open to
-				remote roles, freelance work, and collaborations, especially with
-				early-stage teams shipping fast. Reach out via email or a direct message
-				on X.
+				Contact Indrajit Sahani, a full-stack developer who owns Sendkit end to
+				end at Enrich Labs. Reach out via email, a direct message on X, or
+				LinkedIn.
 			</p>
 
 			<div className="prose prose-neutral dark:prose-invert">
 				<p>
-					I'm open to remote roles, freelance work, and collaborations,
-					especially with early-stage teams shipping fast. The fastest way to
-					reach me is a DM on X or an email. I'll get back to you.
+					Always happy to talk with people building interesting things, whether
+					it's infra, email, AI tooling, or a product you're shipping fast. The
+					fastest way to reach me is a DM on X or an email. I usually reply
+					within a day.
 				</p>
 
 				<Separator />
