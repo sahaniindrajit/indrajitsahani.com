@@ -6,11 +6,11 @@ import ArrowIcon from "./components/ArrowIcon";
 import Badge from "./components/Badge";
 import Separator from "./components/separator";
 import { config } from "./config/config";
-import { defaultOgImage } from "./utils/seo";
+import { defaultOgImage, enrichLabsOrg } from "./utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
-	title: "Indrajit Sahani - Full-Stack Developer",
+	title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 	description:
 		"Indrajit Sahani is a full-stack developer who owns Sendkit end to end at Enrich Labs: product engineering, infrastructure, observability, email deliverability, and AI tooling.",
 	keywords: [
@@ -24,7 +24,12 @@ export const metadata: Metadata = {
 		"Go Developer",
 		"Software Engineer",
 		"Sendkit",
+		"Sendkit Developer",
+		"Sendkit Engineer",
 		"Enrich Labs",
+		"EnrichLabs",
+		"Enrich Labs Developer",
+		"Cold Email Platform",
 		"Infrastructure",
 		"Observability",
 		"Email Deliverability",
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		images: [defaultOgImage],
-		title: "Indrajit Sahani - Full-Stack Developer",
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		url: "https://indrajitsahani.com",
@@ -45,7 +50,7 @@ export const metadata: Metadata = {
 	twitter: {
 		images: [defaultOgImage.url],
 		card: "summary_large_image",
-		title: "Indrajit Sahani - Full-Stack Developer",
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		creator: "@sahani_indrajit",
@@ -64,13 +69,7 @@ export default function Page() {
 		jobTitle: "Full-Stack Developer",
 		email: `mailto:${config.socials.email}`,
 		nationality: "Indian",
-		worksFor: [
-			{
-				"@type": "Organization",
-				name: "Enrich Labs",
-				url: config.companies.enrichLabs,
-			},
-		],
+		worksFor: [enrichLabsOrg],
 		hasOccupation: {
 			"@type": "Occupation",
 			name: "Full-Stack Developer",
@@ -88,6 +87,8 @@ export default function Page() {
 			config.socials.linkedin,
 		],
 		knowsAbout: [
+			"Sendkit",
+			"Cold Email",
 			"Full Stack Development",
 			"React",
 			"Next.js",

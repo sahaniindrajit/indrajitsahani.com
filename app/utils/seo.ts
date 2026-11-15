@@ -15,3 +15,17 @@ export const defaultOgImage = {
 // VERCEL_ENV and count as production.
 export const isProductionDeployment =
 	!process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production";
+
+// Employer for structured data. Linking the Sendkit brand to Enrich Labs and
+// to this Person helps search engines associate the name with both.
+export const enrichLabsOrg = {
+	"@type": "Organization",
+	name: "Enrich Labs",
+	alternateName: ["EnrichLabs", "Enrich Lab"],
+	url: "https://sendkit.ai",
+	brand: {
+		"@type": "Brand",
+		name: "Sendkit",
+		url: "https://sendkit.ai",
+	},
+};

@@ -4,7 +4,7 @@ import WorkExperienceItem from "../components/work-experience-item";
 import EducationItem from "../components/education-item";
 import Chip from "../components/chip";
 import { config } from "../config/config";
-import { defaultOgImage } from "../utils/seo";
+import { defaultOgImage, enrichLabsOrg } from "../utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 		"Software Engineer Resume",
 		"Work Experience",
 		"TypeScript Developer Resume",
+		"Sendkit",
+		"Enrich Labs",
 	],
 	alternates: {
 		canonical: "/resume",
@@ -152,13 +154,7 @@ export default function WorkPage() {
 			name: "Indrajit Sahani",
 			url: "https://indrajitsahani.com",
 			jobTitle: "Full-Stack Developer",
-			worksFor: [
-				{
-					"@type": "Organization",
-					name: "Enrich Labs",
-					url: config.companies.enrichLabs,
-				},
-			],
+			worksFor: [enrichLabsOrg],
 			alumniOf: [
 				{
 					"@type": "EducationalOrganization",

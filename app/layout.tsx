@@ -8,12 +8,16 @@ import { Navbar } from "./components/nav";
 import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 import { PreloadResources } from "./preload";
-import { defaultOgImage, isProductionDeployment } from "./utils/seo";
+import {
+	defaultOgImage,
+	enrichLabsOrg,
+	isProductionDeployment,
+} from "./utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: {
-		default: "Indrajit Sahani - Full-Stack Developer",
+		default: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		template: "%s | Indrajit Sahani",
 	},
 	description:
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
 		: undefined,
 	openGraph: {
 		images: [defaultOgImage],
-		title: "Indrajit Sahani - Full-Stack Developer",
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
 		url: "https://indrajitsahani.com",
@@ -55,7 +59,7 @@ export const metadata: Metadata = {
 		: { index: false, follow: false },
 	twitter: {
 		images: [defaultOgImage.url],
-		title: "Indrajit Sahani - Full-Stack Developer",
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		card: "summary_large_image",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
@@ -96,6 +100,8 @@ export default function RootLayout({
 								name: "Indrajit Sahani",
 								alternateName: ["Indrajit", "sahaniindrajit"],
 								url: "https://indrajitsahani.com",
+								jobTitle: "Full-Stack Developer",
+								worksFor: enrichLabsOrg,
 								sameAs: [
 									"https://github.com/sahaniindrajit",
 									"https://x.com/sahani_indrajit",
