@@ -6,10 +6,11 @@ import ArrowIcon from "./components/ArrowIcon";
 import Badge from "./components/Badge";
 import Separator from "./components/separator";
 import { config } from "./config/config";
+import { defaultOgImage, enrichLabsOrg } from "./utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
-	title: "Indrajit Sahani - Full-Stack Developer",
+	title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 	description:
 		"Indrajit Sahani is a full-stack developer who owns Sendkit end to end at Enrich Labs: product engineering, infrastructure, observability, email deliverability, and AI tooling.",
 	keywords: [
@@ -23,7 +24,12 @@ export const metadata: Metadata = {
 		"Go Developer",
 		"Software Engineer",
 		"Sendkit",
+		"Sendkit Developer",
+		"Sendkit Engineer",
 		"Enrich Labs",
+		"EnrichLabs",
+		"Enrich Labs Developer",
+		"Cold Email Platform",
 		"Infrastructure",
 		"Observability",
 		"Email Deliverability",
@@ -33,7 +39,8 @@ export const metadata: Metadata = {
 		canonical: "/",
 	},
 	openGraph: {
-		title: "Indrajit Sahani - Full-Stack Developer",
+		images: [defaultOgImage],
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		url: "https://indrajitsahani.com",
@@ -41,8 +48,9 @@ export const metadata: Metadata = {
 		type: "website",
 	},
 	twitter: {
+		images: [defaultOgImage.url],
 		card: "summary_large_image",
-		title: "Indrajit Sahani - Full-Stack Developer",
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Full-stack developer who builds and runs production systems. Owns Sendkit end to end at Enrich Labs.",
 		creator: "@sahani_indrajit",
@@ -55,18 +63,13 @@ export default function Page() {
 		"@context": "https://schema.org",
 		"@type": "Person",
 		name: "Indrajit Sahani",
+		alternateName: ["Indrajit", "sahaniindrajit"],
 		url: "https://indrajitsahani.com",
 		image: "https://indrajitsahani.com/indrajit.png",
 		jobTitle: "Full-Stack Developer",
 		email: `mailto:${config.socials.email}`,
 		nationality: "Indian",
-		worksFor: [
-			{
-				"@type": "Organization",
-				name: "Enrich Labs",
-				url: config.companies.enrichLabs,
-			},
-		],
+		worksFor: [enrichLabsOrg],
 		hasOccupation: {
 			"@type": "Occupation",
 			name: "Full-Stack Developer",
@@ -84,6 +87,8 @@ export default function Page() {
 			config.socials.linkedin,
 		],
 		knowsAbout: [
+			"Sendkit",
+			"Cold Email",
 			"Full Stack Development",
 			"React",
 			"Next.js",
@@ -110,14 +115,6 @@ export default function Page() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<p className="sr-only">
-				Indrajit Sahani is a full-stack developer who builds and runs production
-				systems. He owns Sendkit, a cold email platform, end to end at Enrich
-				Labs: product engineering, infrastructure, observability, email
-				deliverability, and AI integrations. He works with React, Next.js,
-				TypeScript, Node.js, Go, MongoDB, PostgreSQL, and Redis, and previously
-				built Linkbird, a LinkedIn automation platform.
-			</p>
 			<header className="mb-6">
 				<div className="flex items-center gap-4 mb-4">
 					<Image
@@ -220,11 +217,6 @@ export default function Page() {
 
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>GitHub Contributions</h2>
-				<p className="sr-only">
-					Indrajit Sahani's GitHub contribution graph showing daily open-source
-					coding activity on React, Next.js, TypeScript, Node.js, and Go
-					projects as sahaniindrajit.
-				</p>
 				<GitHubCalendar username="sahaniindrajit" />
 			</div>
 

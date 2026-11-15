@@ -8,11 +8,16 @@ import { Navbar } from "./components/nav";
 import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 import { PreloadResources } from "./preload";
+import {
+	defaultOgImage,
+	enrichLabsOrg,
+	isProductionDeployment,
+} from "./utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
 	title: {
-		default: "Indrajit Sahani - Full-Stack Developer",
+		default: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		template: "%s | Indrajit Sahani",
 	},
 	description:
@@ -28,7 +33,8 @@ export const metadata: Metadata = {
 		? { google: process.env.GOOGLE_SITE_VERIFICATION }
 		: undefined,
 	openGraph: {
-		title: "Indrajit Sahani - Full-Stack Developer",
+		images: [defaultOgImage],
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		description:
 			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
 		url: "https://indrajitsahani.com",
@@ -36,19 +42,24 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		type: "website",
 	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+	// Dev and preview deployments must never be indexed, or Google sees a
+	// duplicate copy of the site.
+	robots: isProductionDeployment
+		? {
+				index: true,
+				follow: true,
+				googleBot: {
+					index: true,
+					follow: true,
+					"max-video-preview": -1,
+					"max-image-preview": "large",
+					"max-snippet": -1,
+				},
+			}
+		: { index: false, follow: false },
 	twitter: {
-		title: "Indrajit Sahani - Full-Stack Developer",
+		images: [defaultOgImage.url],
+		title: "Indrajit Sahani - Full-Stack Developer at Sendkit (Enrich Labs)",
 		card: "summary_large_image",
 		creator: "@sahani_indrajit",
 		site: "@sahani_indrajit",
@@ -87,7 +98,10 @@ export default function RootLayout({
 							author: {
 								"@type": "Person",
 								name: "Indrajit Sahani",
+								alternateName: ["Indrajit", "sahaniindrajit"],
 								url: "https://indrajitsahani.com",
+								jobTitle: "Full-Stack Developer",
+								worksFor: enrichLabsOrg,
 								sameAs: [
 									"https://github.com/sahaniindrajit",
 									"https://x.com/sahani_indrajit",

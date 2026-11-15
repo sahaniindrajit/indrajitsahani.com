@@ -4,6 +4,7 @@ import Link from "next/link";
 import Separator from "../components/separator";
 import { getBlogPosts } from "../lib/posts";
 import formatDate from "../utils/formatDate";
+import { defaultOgImage } from "../utils/seo";
 
 const SITE_URL = "https://indrajitsahani.com";
 
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 		},
 	},
 	openGraph: {
+		images: [defaultOgImage],
 		title: "Blog | Indrajit Sahani",
 		description:
 			"Writing on full-stack development, React, Next.js, TypeScript, Node.js, Go, and building real products that ship.",
@@ -37,6 +39,7 @@ export const metadata: Metadata = {
 		type: "website",
 	},
 	twitter: {
+		images: [defaultOgImage.url],
 		card: "summary_large_image",
 		title: "Blog | Indrajit Sahani",
 		description:
