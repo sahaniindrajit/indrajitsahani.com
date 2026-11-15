@@ -8,6 +8,7 @@ import { Navbar } from "./components/nav";
 import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 import { PreloadResources } from "./preload";
+import { defaultOgImage, isProductionDeployment } from "./utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 		? { google: process.env.GOOGLE_SITE_VERIFICATION }
 		: undefined,
 	openGraph: {
+		images: [defaultOgImage],
 		title: "Indrajit Sahani - Full-Stack Developer",
 		description:
 			"Product-minded full-stack developer specializing in React, Next.js, TypeScript, Node.js & Go. Currently building Sendkit at Enrich Labs.",
@@ -36,18 +38,23 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		type: "website",
 	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+	// Dev and preview deployments must never be indexed, or Google sees a
+	// duplicate copy of the site.
+	robots: isProductionDeployment
+		? {
+				index: true,
+				follow: true,
+				googleBot: {
+					index: true,
+					follow: true,
+					"max-video-preview": -1,
+					"max-image-preview": "large",
+					"max-snippet": -1,
+				},
+			}
+		: { index: false, follow: false },
 	twitter: {
+		images: [defaultOgImage.url],
 		title: "Indrajit Sahani - Full-Stack Developer",
 		card: "summary_large_image",
 		creator: "@sahani_indrajit",
@@ -87,6 +94,7 @@ export default function RootLayout({
 							author: {
 								"@type": "Person",
 								name: "Indrajit Sahani",
+								alternateName: ["Indrajit", "sahaniindrajit"],
 								url: "https://indrajitsahani.com",
 								sameAs: [
 									"https://github.com/sahaniindrajit",

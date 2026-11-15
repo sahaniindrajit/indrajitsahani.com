@@ -4,6 +4,7 @@ import WorkExperienceItem from "../components/work-experience-item";
 import EducationItem from "../components/education-item";
 import Chip from "../components/chip";
 import { config } from "../config/config";
+import { defaultOgImage } from "../utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 		canonical: "/resume",
 	},
 	openGraph: {
+		images: [defaultOgImage],
 		type: "article",
 		url: "https://indrajitsahani.com/resume",
 		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
 			"Full-Stack Developer owning Sendkit end to end at Enrich Labs. Experienced in TypeScript, Node.js, Go, MongoDB, Redis, Docker & OpenTelemetry.",
 	},
 	twitter: {
+		images: [defaultOgImage.url],
 		card: "summary_large_image",
 		title: "Resume - Full-Stack Developer Experience | Indrajit Sahani",
 		description:

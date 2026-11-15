@@ -7,6 +7,7 @@ import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import type { Metadata } from "next";
 import Separator from "../components/separator";
 import { config } from "../config/config";
+import { defaultOgImage } from "../utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 		canonical: "/contact",
 	},
 	openGraph: {
+		images: [defaultOgImage],
 		title: "Contact Indrajit Sahani",
 		description:
 			"Get in touch with Indrajit Sahani, full-stack developer building Sendkit at Enrich Labs. Reach out via email, a DM on X, or LinkedIn.",
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 		type: "website",
 	},
 	twitter: {
+		images: [defaultOgImage.url],
 		card: "summary_large_image",
 		title: "Contact Indrajit Sahani",
 		description:

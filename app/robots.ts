@@ -1,4 +1,13 @@
+import { isProductionDeployment } from "./utils/seo";
+
 export default function robots() {
+	// Block all crawling on dev/preview deployments.
+	if (!isProductionDeployment) {
+		return {
+			rules: [{ userAgent: "*", disallow: "/" }],
+		};
+	}
+
 	return {
 		rules: [
 			{

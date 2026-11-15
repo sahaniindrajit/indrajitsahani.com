@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { generateBreadcrumbJsonLd } from "app/utils/jsonLd";
 import ProjectCard from "../components/project-card";
+import { defaultOgImage } from "../utils/seo";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://indrajitsahani.com"),
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 		canonical: "/projects",
 	},
 	openGraph: {
+		images: [defaultOgImage],
 		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
 			"Projects by Indrajit Sahani: Sendkit CLI, SketchSync, PDF-Talk, NotionLeager, and more. Built with TypeScript, Next.js, Node.js, Go & AI.",
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 		type: "website",
 	},
 	twitter: {
+		images: [defaultOgImage.url],
 		card: "summary_large_image",
 		title: "Projects - Full-Stack Web Applications | Indrajit Sahani",
 		description:
