@@ -11,6 +11,10 @@ function escapeHtml(text: string): string {
 		.replace(/>/g, "&gt;");
 }
 
+function escapeAttr(text: unknown): string {
+	return escapeHtml(String(text ?? "")).replace(/"/g, "&quot;");
+}
+
 // Highlight fenced code blocks with sugar-high, which emits spans that read the
 // --sh-* CSS variables already defined in global.css. Works with marked's old
 // (string) and new (token object) renderer signatures.
@@ -24,6 +28,16 @@ marked.use({
 			} catch {
 				return `<pre><code>${escapeHtml(code)}</code></pre>`;
 			}
+		},
+		// Lazy-load in-post images so they never compete with the text. Works with
+		// marked's old (href, title, text) and new (token object) signatures.
+		image(...args: unknown[]) {
+			const token =
+				typeof args[0] === "string"
+					? { href: args[0], title: args[1], text: args[2] }
+					: (args[0] as { href: string; title?: string | null; text: string });
+			const title = token.title ? ` title="${escapeAttr(token.title)}"` : "";
+			return `<img src="${escapeAttr(token.href)}" alt="${escapeAttr(token.text)}"${title} loading="lazy" decoding="async" />`;
 		},
 	},
 });
